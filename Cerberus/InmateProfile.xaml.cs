@@ -10,30 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Cerberus
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for InmateProfile.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class InmateProfile : Window
     {
-        public MainWindow()
+        public InmateProfile()
         {
             InitializeComponent();
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            InmateProfile test = new InmateProfile();
-            test.Show();
         }
     }
 }

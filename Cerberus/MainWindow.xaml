@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cerberus"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Home" Height="450" Width="800">
+    <Grid Margin="10">
+        <!--Navigation Menu-->
+        <Canvas HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="185">
+            <Label Canvas.Top="0" Canvas.Left="0" FontSize="20" Height="40">
+                Navigation
+            </Label>
+            <Label VerticalContentAlignment="Top" Canvas.Top="30" Canvas.Left="20" FontSize="20" Height="32" Width="75">
+                Inmate
+            </Label>
+
+            <Button HorizontalContentAlignment="Left" Content="Inmate Profiles" Canvas.Left="45" Canvas.Top="65" Width="135" Background="Transparent" BorderThickness="0" Click="Button_Click"/>
+            <Button HorizontalContentAlignment="Left" Content="Medical Reports" Canvas.Left="45" Canvas.Top="80" Width="135" Background="Transparent" BorderThickness="0"/>
+            <Button HorizontalContentAlignment="Left" Content="Inmate Schedules" Canvas.Left="45" Canvas.Top="95" Width="135" Background="Transparent" BorderThickness="0"/>
+            <Button HorizontalContentAlignment="Left" Content="Behavior Reports" Canvas.Left="45" Canvas.Top="110" Width="135" Background="Transparent" BorderThickness="0"/>
+
+            <Label VerticalContentAlignment="Top" Canvas.Top="128" Canvas.Left="20" FontSize="20" Height="37" Width="106">
+                Employee
+            </Label>
+
+            <Button HorizontalContentAlignment="Left" Content="Employee Profiles" Canvas.Left="45" Canvas.Top="165" Width="135" Background="Transparent" BorderThickness="0"/>
+            <Button HorizontalContentAlignment="Left" Content="Clock In/Out" Canvas.Left="45" Canvas.Top="180" Width="135" Background="Transparent" BorderThickness="0"/>
+        </Canvas>
+
+        <!--Welcome Message-->
+        <Label HorizontalContentAlignment="Center" VerticalAlignment="Center" FontSize="20" Margin="190,109,-0.444,225.667" Height="68">
+            Cerberus Correctional Software
+        </Label>
+
+        <!--Search Bar-->
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="190,10,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="342">
+        </TextBox>
+
+        <!--Search Selector-->
+        <ComboBox HorizontalAlignment="Left" Margin="537,10,0,0" VerticalAlignment="Top" Width="153" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem IsSelected="True">Inmate ID Number</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Other?</ComboBoxItem>
+        </ComboBox>
+
+        <!--Buttons-->
+        <Button Content="Search" HorizontalAlignment="Left" Margin="696,11,0,0" VerticalAlignment="Top" Width="70"/>
         
     </Grid>
 </Window>

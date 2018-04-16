@@ -1,0 +1,49 @@
+﻿<Window x:Class="Cerberus.InmateProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cerberus"
+        mc:Ignorable="d"
+        Title="InmateProfile" Height="410" Width="500">
+    <Grid>
+        <!--Name-->
+        <Label Content="Inmate Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,40,0,0" TextWrapping="Wrap" Text="Inmate.FirstName" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,40,0,0" TextWrapping="Wrap" Text="Inmate.MiddleName" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,40,0,0" TextWrapping="Wrap" Text="Inmate.LastName" VerticalAlignment="Top" Width="150"/>
+        <!--Aliases-->
+        <Label Content="Known Aliases:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,100,0,0" TextWrapping="Wrap" Text="Inmate.Aliases" VerticalAlignment="Top" Width="120"/>
+        <!--ID Number-->
+        <Label Content="ID Number:" HorizontalAlignment="Left" Margin="165,70,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,100,0,0" TextWrapping="Wrap" Text="Inmate.IDNumber" VerticalAlignment="Top" Width="120"/>
+        <!--Date Of Birth-->
+        <Label Content="Date of Birth:" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,160,0,0" TextWrapping="Wrap" Text="Inmate.IDNumber" VerticalAlignment="Top" Width="120"/>
+        <!--Social Security Number-->
+        <Label Content="ID Number:" HorizontalAlignment="Left" Margin="320,70,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,100,0,0" TextWrapping="Wrap" Text="Inmate.SSN" VerticalAlignment="Top" Width="120"/>
+        <!--Sentence-->
+        <Label Content="Sentence:" HorizontalAlignment="Left" Margin="165,130,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,160,0,0" TextWrapping="Wrap" Text="Inmate.Sentence" VerticalAlignment="Top" Width="120"/>
+        <!--Lawyer-->
+        <Label Content="Lawyer:" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,220,0,0" TextWrapping="NoWrap" Text="Inmate.Lawyer.Name" VerticalAlignment="Top" Width="230"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="255,220,0,0" TextWrapping="NoWrap" Text="Inmate.Lawyer.Contact" VerticalAlignment="Top" Width="225"/>
+        <!--Emergency Contact-->
+        <Label Content="Emergency Contact:" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,280,0,0" TextWrapping="NoWrap" Text="Inmate.EC.Name" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,280,0,0" TextWrapping="NoWrap" Text="Inmate.EC.Contact" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,280,0,0" TextWrapping="NoWrap" Text="Inmate.EC.Relation" VerticalAlignment="Top" Width="150"/>
+        <!--Job Assignment-->
+        <Label Content="Job Assignment:" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,343,0,0" TextWrapping="Wrap" Text="Inmate.Job" VerticalAlignment="Top" Width="120"/>
+        <!--Cell Assignment-->
+        <Label Content="Cell Assignment:" HorizontalAlignment="Left" Margin="320,130,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,160,0,0" TextWrapping="Wrap" Text="Inmate.Cell" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Return To Search" HorizontalAlignment="Left" Margin="175,337,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
+        <Button Content="Update Inmate Profile" HorizontalAlignment="Left" Margin="330,336,0,0" IsDefault="True" VerticalAlignment="Top" Width="150" Height="30"/>
+
+    </Grid>
+</Window>
