@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:Cerberus"
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
-    <Grid Margin="10">
-        <!--Navigation Menu-->
-        <Canvas HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="185">
-            <Label Canvas.Top="0" Canvas.Left="0" FontSize="20" Height="40">
+    <!--Navigation Menu-->
+    <DockPanel>
+        <Canvas DockPanel.Dock="Left" Width="184" Margin="0,0,0,-0.333">
+            <Label DockPanel.Dock="Left" Canvas.Top="0" Canvas.Left="0" FontSize="20" Height="40">
                 Navigation
             </Label>
             <Label VerticalContentAlignment="Top" Canvas.Top="30" Canvas.Left="20" FontSize="20" Height="32" Width="75">
@@ -29,23 +29,7 @@
             <Button HorizontalContentAlignment="Left" Content="Clock In/Out" Canvas.Left="45" Canvas.Top="180" Width="135" Background="Transparent" BorderThickness="0"/>
         </Canvas>
 
-        <!--Welcome Message-->
-        <Label HorizontalContentAlignment="Center" VerticalAlignment="Center" FontSize="20" Margin="190,109,-0.444,225.667" Height="68">
-            Cerberus Correctional Software
-        </Label>
+        <Frame x:Name="Main"/>
 
-        <!--Search Bar-->
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="190,10,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="342">
-        </TextBox>
-
-        <!--Search Selector-->
-        <ComboBox HorizontalAlignment="Left" Margin="537,10,0,0" VerticalAlignment="Top" Width="153" SelectionChanged="ComboBox_SelectionChanged">
-            <ComboBoxItem IsSelected="True">Inmate ID Number</ComboBoxItem>
-            <ComboBoxItem IsSelected="False">Other?</ComboBoxItem>
-        </ComboBox>
-
-        <!--Buttons-->
-        <Button Content="Search" HorizontalAlignment="Left" Margin="696,11,0,0" VerticalAlignment="Top" Width="70"/>
-        
-    </Grid>
+    </DockPanel>
 </Window>

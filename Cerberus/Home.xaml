@@ -1,0 +1,19 @@
+﻿<Page x:Class="Cerberus.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cerberus"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="616"
+      Title="Home">
+
+    <Grid>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36">
+                Welcome to the<LineBreak />
+        </TextBlock>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36">
+                <LineBreak />Cerberus Correctional System
+        </TextBlock>
+    </Grid>
+</Page>

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Cerberus
 {
     /// <summary>
-    /// Interaction logic for InmateProfile.xaml
+    /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class InmateProfile : Page
+    public partial class Home : Page
     {
-        public InmateProfile()
+        public Home()
         {
             InitializeComponent();
         }

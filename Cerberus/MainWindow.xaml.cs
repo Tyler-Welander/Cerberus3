@@ -23,6 +23,7 @@ namespace Cerberus
         public MainWindow()
         {
             InitializeComponent();
+            Main.Content = new Home();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -32,8 +33,9 @@ namespace Cerberus
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            InmateProfile test = new InmateProfile();
-            test.Show();
+            //InmateProfile test = new InmateProfile();
+            //test.Show();
+            Main.Content = new InmateProfile();
         }
     }
 }
