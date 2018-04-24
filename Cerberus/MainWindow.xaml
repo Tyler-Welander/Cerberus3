@@ -8,7 +8,7 @@
         Title="Home" Height="450" Width="800">
     <!--Navigation Menu-->
     <DockPanel>
-        <Canvas DockPanel.Dock="Left" Width="184" Margin="0,0,0,-0.333">
+        <Canvas DockPanel.Dock="Left" Width="185" Margin="0,0,0,-0.333">
             <Label DockPanel.Dock="Left" Canvas.Top="0" Canvas.Left="0" FontSize="20" Height="40">
                 Navigation
             </Label>

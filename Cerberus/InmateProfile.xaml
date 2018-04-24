@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Cerberus"
       mc:Ignorable="d" 
-      d:DesignHeight="410" d:DesignWidth="500"
+      d:DesignHeight="410" d:DesignWidth="615"
       Title="InmateProfile">
 
     <Grid>
@@ -24,7 +24,7 @@
         <Label Content="Date of Birth:" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="20,160,0,0" TextWrapping="Wrap" Text="Inmate.IDNumber" VerticalAlignment="Top" Width="120"/>
         <!--Social Security Number-->
-        <Label Content="ID Number:" HorizontalAlignment="Left" Margin="320,70,0,0" VerticalAlignment="Top"/>
+        <Label Content="SSN:" HorizontalAlignment="Left" Margin="320,70,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="330,100,0,0" TextWrapping="Wrap" Text="Inmate.SSN" VerticalAlignment="Top" Width="120"/>
         <!--Sentence-->
         <Label Content="Sentence:" HorizontalAlignment="Left" Margin="165,130,0,0" VerticalAlignment="Top"/>

@@ -35,7 +35,7 @@ namespace Cerberus
         {
             //InmateProfile test = new InmateProfile();
             //test.Show();
-            Main.Content = new InmateProfile();
+            Main.Content = new SearchInmate();
         }
     }
 }
