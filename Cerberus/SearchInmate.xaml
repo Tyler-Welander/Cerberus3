@@ -4,9 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Cerberus"
+      xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
+      xmlns:dg1="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
       mc:Ignorable="d" 
       d:DesignHeight="410" d:DesignWidth="615"
       Title="SearchInmate">
+    <Page.Resources>
+        <local:CerberusDatabaseDataSet x:Key="cerberusDatabaseDataSet"/>
+        <CollectionViewSource x:Key="inmatesViewSource" Source="{Binding Inmates, Source={StaticResource cerberusDatabaseDataSet}}"/>
+    </Page.Resources>
 
     <Grid>
         <!--Search Bar-->
@@ -21,9 +27,10 @@
         <!--Buttons-->
         <Button Content="Search" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="10, 10" Height="27" Click="SearchButton_Click"/>
 
-        <ListBox Name="SearchResults" Margin="10,47,9.667,56" SelectionChanged="SearchResults_SelectionChanged">
-
-        </ListBox>
+        <!--ListBox Name="SearchResults" Margin="10,47,9.667,56" SelectionChanged="SearchResults_SelectionChanged" DisplayMemberPath="Sentence" ItemsSource="{Binding}" SelectedValuePath="ID">
+        </-->
+        <DataGrid x:Name="grid" DataContext="{StaticResource inmatesViewSource}" Margin="10,47,9.667,56" SelectionChanged="DataGrid_SelectionChanged" ItemsSource="{Binding}" AutoGenerateColumns="True">
+        </DataGrid>
         <Button Name="ViewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="View Inmate Profile" Margin="0,0,11.667,10" Width="120" Height="28" Click="ViewItem_Click"/>
         <Button Name="NewInmateProfile" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="New Inmate Profile" Margin="10,0,0,10" Width="137" Height="28" Click="NewInmateProfile_Click"/>
     </Grid>

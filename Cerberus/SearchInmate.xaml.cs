@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cerberus.CerberusDatabaseDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace Cerberus
     /// </summary>
     public partial class SearchInmate : Page
     {
+        private CerberusDatabaseDataSet CerberusDataSet;
+        private InmatesTableAdapter inmatesTableAdapter;
         private List<Inmate> items = new List<Inmate>();
         
         public SearchInmate()
@@ -30,7 +33,15 @@ namespace Cerberus
             items.Add(new Inmate() { Name = "Tyler Welander", ID = "00000002", Profile = new InmateProfile("Tyler") });
             items.Add(new Inmate() { Name = "Michelle Keller", ID = "00000003", Profile = new InmateProfile("Michelle") });
 
-            
+            // Construct the dataset
+            CerberusDataSet = new CerberusDatabaseDataSet();
+
+            // Use a table adapter to populate the Inmates table
+            inmatesTableAdapter = new InmatesTableAdapter();
+            inmatesTableAdapter.Fill(CerberusDataSet.Inmates);
+
+            // Use the Inmates talbe as the DataContext for this window
+            grid.DataContext = CerberusDataSet.Inmates.DefaultView;
         }
 
         public class Inmate
@@ -61,18 +72,18 @@ namespace Cerberus
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             //loads list into listbox
-            SearchResults.ItemsSource = items;
+           // SearchResults.ItemsSource = items;
         }
 
         public void ViewItem_Click(object sender, RoutedEventArgs e)
         {
-            if (SearchResults.SelectedItem != null)
-            {
-                Inmate selected = (Inmate)SearchResults.SelectedItem;
+            //if (SearchResults.SelectedItem != null)
+            //{
+               // Inmate selected = (Inmate)SearchResults.SelectedItem;
                 
                 //txtSearch.Text = SearchResults.SelectedItem.ToString();
-                NavigationService.Navigate(selected.Profile);
-            }
+               // NavigationService.Navigate(selected.Profile);
+           // }
         }
 
         private void SearchResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -83,6 +94,10 @@ namespace Cerberus
         private void NewInmateProfile_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new InmateProfile(""));
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
         }
     }
 }

@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CerberusDatabaseDataSet.cs">
+      <DependentUpon>CerberusDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CerberusDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
