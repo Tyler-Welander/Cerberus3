@@ -34,12 +34,20 @@ namespace Cerberus
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Inmate Profiles
              Main.Content = new SearchInmate();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            //Medical Report
             Main.Content = new SearchMedicalReports();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            //Schedule
+            Main.Content = new ScheduleSearch();
         }
     }
 }

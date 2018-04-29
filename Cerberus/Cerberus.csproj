@@ -62,6 +62,12 @@
     <Compile Include="InmateMedicalHistory.xaml.cs">
       <DependentUpon>InmateMedicalHistory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InmateSchedule.xaml.cs">
+      <DependentUpon>InmateSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleSearch.xaml.cs">
+      <DependentUpon>ScheduleSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchInmate.xaml.cs">
       <DependentUpon>SearchInmate.xaml</DependentUpon>
     </Compile>
@@ -77,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InmateProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InmateSchedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,6 +108,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ScheduleSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SearchInmate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
