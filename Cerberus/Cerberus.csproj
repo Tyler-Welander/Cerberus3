@@ -59,10 +59,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CerberusDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InmateMedicalHistory.xaml.cs">
+      <DependentUpon>InmateMedicalHistory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchInmate.xaml.cs">
       <DependentUpon>SearchInmate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchMedicalReports.xaml.cs">
+      <DependentUpon>SearchMedicalReports.xaml</DependentUpon>
+    </Compile>
     <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InmateMedicalHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,6 +99,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SearchInmate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchMedicalReports.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
