@@ -20,9 +20,20 @@ namespace Cerberus
     /// </summary>
     public partial class InmateProfile : Page
     {
-        public InmateProfile()
+        public InmateProfile(String fname)
         {
             InitializeComponent();
+            txtFirstName.Text = fname;
+        }
+
+        private void ReturntoSearch_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void UpdateInmateProfile_Click(object sender, RoutedEventArgs e)
+        {
+            //Save fields in database
         }
     }
 }

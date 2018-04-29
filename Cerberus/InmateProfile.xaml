@@ -5,47 +5,108 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Cerberus"
       mc:Ignorable="d" 
-      d:DesignHeight="410" d:DesignWidth="615"
+      d:DesignHeight="500" d:DesignWidth="700"
       Title="InmateProfile">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
+            <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
+            <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
+            <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
+            <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
+            <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
+            <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="150" Width="150*"/>
+            <ColumnDefinition MinWidth="150" Width="150*"/>
+            <ColumnDefinition MinWidth="150" Width="150*"/>
+        </Grid.ColumnDefinitions>
+        
         <!--Name-->
-        <Label Content="Inmate Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,40,0,0" TextWrapping="Wrap" Text="Inmate.FirstName" VerticalAlignment="Top" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,40,0,0" TextWrapping="Wrap" Text="Inmate.MiddleName" VerticalAlignment="Top" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,40,0,0" TextWrapping="Wrap" Text="Inmate.LastName" VerticalAlignment="Top" Width="150"/>
-        <!--Aliases-->
-        <Label Content="Known Aliases:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,100,0,0" TextWrapping="Wrap" Text="Inmate.Aliases" VerticalAlignment="Top" Width="120"/>
-        <!--ID Number-->
-        <Label Content="ID Number:" HorizontalAlignment="Left" Margin="165,70,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,100,0,0" TextWrapping="Wrap" Text="Inmate.IDNumber" VerticalAlignment="Top" Width="120"/>
-        <!--Date Of Birth-->
-        <Label Content="Date of Birth:" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,160,0,0" TextWrapping="Wrap" Text="Inmate.IDNumber" VerticalAlignment="Top" Width="120"/>
-        <!--Social Security Number-->
-        <Label Content="SSN:" HorizontalAlignment="Left" Margin="320,70,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,100,0,0" TextWrapping="Wrap" Text="Inmate.SSN" VerticalAlignment="Top" Width="120"/>
-        <!--Sentence-->
-        <Label Content="Sentence:" HorizontalAlignment="Left" Margin="165,130,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,160,0,0" TextWrapping="Wrap" Text="Inmate.Sentence" VerticalAlignment="Top" Width="120"/>
-        <!--Lawyer-->
-        <Label Content="Lawyer:" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,220,0,0" TextWrapping="NoWrap" Text="Inmate.Lawyer.Name" VerticalAlignment="Top" Width="230"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="255,220,0,0" TextWrapping="NoWrap" Text="Inmate.Lawyer.Contact" VerticalAlignment="Top" Width="225"/>
-        <!--Emergency Contact-->
-        <Label Content="Emergency Contact:" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,280,0,0" TextWrapping="NoWrap" Text="Inmate.EC.Name" VerticalAlignment="Top" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,280,0,0" TextWrapping="NoWrap" Text="Inmate.EC.Contact" VerticalAlignment="Top" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,280,0,0" TextWrapping="NoWrap" Text="Inmate.EC.Relation" VerticalAlignment="Top" Width="150"/>
-        <!--Job Assignment-->
-        <Label Content="Job Assignment:" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,343,0,0" TextWrapping="Wrap" Text="Inmate.Job" VerticalAlignment="Top" Width="120"/>
-        <!--Cell Assignment-->
-        <Label Content="Cell Assignment:" HorizontalAlignment="Left" Margin="320,130,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,160,0,0" TextWrapping="Wrap" Text="Inmate.Cell" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Return To Search" HorizontalAlignment="Left" Margin="175,337,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
-        <Button Content="Update Inmate Profile" HorizontalAlignment="Left" Margin="330,337,0,0" IsDefault="True" VerticalAlignment="Top" Width="150" Height="30"/>
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="0">
+            <Label Name="lblFirstName" TabIndex="1" Content="First Name:" Target="{Binding ElementName=txtFirstName}" />
+            <TextBox Name="txtFirstName" TabIndex="2" TextWrapping="Wrap" Text="Inmate.FirstName"/>
+        </StackPanel>
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="1">
+            <Label Name="lblMiddleName" TabIndex="3" Content="Middle Name:" Target="{Binding ElementName=txtMiddleName}" />
+            <TextBox Name="txtMiddleName" TabIndex="4" TextWrapping="Wrap" Text="Inmate.MiddleName"/>
+        </StackPanel>
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="2">
+            <Label Name="lblLastName" TabIndex="5" Content="Last Name:" Target="{Binding ElementName=txtLastName}"/>
+            <TextBox Name="txtLastName" TabIndex="6" TextWrapping="Wrap" Text="Inmate.LastName"/>
+        </StackPanel>
 
+        <!--ID Number-->
+        <StackPanel Margin="5" Grid.Row="1" Grid.Column="0">
+            <Label Name="lblID" TabIndex="7" Content="ID Number:" Target="{Binding ElementName=txtID}"/>
+            <TextBox Name="txtID" TabIndex="8" TextWrapping="Wrap" Text="Inmate.ID"/>
+        </StackPanel>
+        
+        <!--Aliases-->
+        <StackPanel Margin="5" Grid.Row="1" Grid.Column="1">
+            <Label Name="lblAliasesName" TabIndex="9" Content="Aliases:" Target="{Binding ElementName=txtAliases}"/>
+            <TextBox Name="txtAliases" TabIndex="10" TextWrapping="Wrap" Text="Inmate.Aliases"/>
+        </StackPanel>
+
+        <!--Date Of Birth-->
+        <StackPanel Margin="5" Grid.Row="1" Grid.Column="2">
+            <Label Name="lblDateOfBirth" TabIndex="11" Content="Date of Birth:" Target="{Binding ElementName=txtDateOfBirth}"/>
+            <TextBox Name="txtDateOfBirth" TabIndex="12" TextWrapping="Wrap" Text="Inmate.DateOfBirth"/>
+        </StackPanel>
+
+        <!--Social Security Number-->
+        <StackPanel Margin="5" Grid.Row="2" Grid.Column="0">
+            <Label Name="lblSSN" TabIndex="13" Content="SSN:" Target="{Binding ElementName=txtSSN}"/>
+            <TextBox Name="txtSSN" TabIndex="14" TextWrapping="Wrap" Text="Inmate.SSN"/>
+        </StackPanel>
+        
+        <!--Sentence-->
+        <StackPanel Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <Label Name="lblSentence" TabIndex="15" Content="Sentence:" Target="{Binding ElementName=txtSentence}"/>
+            <TextBox Name="txtSentence" TabIndex="16" TextWrapping="Wrap" Text="Inmate.Sentence"/>
+        </StackPanel>
+        
+        <!--Lawyer-->
+        <StackPanel Margin="5" Grid.Row="3" Grid.Column="0">
+            <Label Name="lblLawyerName" TabIndex="17" Content="Lawyer Name:" Target="{Binding ElementName=txtLawyerName}"/>
+            <TextBox Name="txtLawyerName" TabIndex="18" TextWrapping="Wrap" Text="Inmate.LaywerName"/>
+        </StackPanel>
+        <StackPanel Margin="5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+            <Label Name="lblLawyerContactInfo" TabIndex="19" Content="Lawyer Contact Information:" Target="{Binding ElementName=txtLawyerContactInfo}"/>
+            <TextBox Name="txtLawyerContactInfo" TabIndex="20" TextWrapping="Wrap" Text="Inmate.LawyerContactInfo"/>
+        </StackPanel>
+        
+        <!--Emergency Contact-->
+        <StackPanel Margin="5" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1">
+            <Label Name="lblEmergencyContactName" TabIndex="21" Content="Emergency ContactName:" Target="{Binding ElementName=txtEmergencyContactName}"/>
+            <TextBox Name="txtEmergencyContactName" TabIndex="22" TextWrapping="Wrap" Text="Inmate.EmergencyContactName"/>
+        </StackPanel>
+        <StackPanel Margin="5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1">
+            <Label Name="lblEmergencyContactInfo" TabIndex="23" Content="Emergency Contact Information:" Target="{Binding ElementName=txtEmergencyContactInfo}"/>
+            <TextBox Name="txtEmergencyContactInfo" TabIndex="24" TextWrapping="Wrap" Text="Inmate.EmergencyContactInfo"/>
+        </StackPanel>
+        <StackPanel Margin="5" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1">
+            <Label Name="lblEmergencyContactRelation" TabIndex="25" Content="Emergency Contact Relation:" Target="{Binding ElementName=txtEmergencyContactRelation}"/>
+            <TextBox Name="txtEmergencyContactRelation" TabIndex="26" TextWrapping="Wrap" Text="Inmate.EmergencyContactRelation"/>
+        </StackPanel>
+        
+        <!--Cell Assignment-->
+        <StackPanel Margin="5" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1">
+            <Label Name="lblCellAssignment" TabIndex="27" Content="Cell Assignment:" Target="{Binding ElementName=txtCellAssignment}"/>
+            <TextBox Name="txtCellAssignment" TabIndex="28" TextWrapping="Wrap" Text="Inmate.CellAssignment"/>
+        </StackPanel>
+        
+        <!--Job Assignment-->
+        <StackPanel Margin="5" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
+            <Label Name="lblJobAssignment" TabIndex="29" Content="Job Assignment:" Target="{Binding ElementName=txtJobAssignment}"/>
+            <TextBox Name="txtJobAssignment" TabIndex="30" TextWrapping="Wrap" Text="Inmate.JobAssignment"/>
+        </StackPanel>
+
+        <Button Name="btnReturnToSearch" Content="Return To Search" Margin="5" MaxHeight="30" MaxWidth="200"
+                Grid.Row="6" Grid.Column="0" TabIndex="29" Click="ReturntoSearch_Click"/>
+        <Button Name="btnUpdateInmateProfile" Content="Update Inmate Profile" Margin="5" MaxHeight="30" MaxWidth="200"
+                Grid.Row="6" Grid.Column="2" TabIndex="29" Click="UpdateInmateProfile_Click"/>
     </Grid>
 </Page>

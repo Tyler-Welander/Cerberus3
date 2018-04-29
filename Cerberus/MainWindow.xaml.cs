@@ -23,7 +23,8 @@ namespace Cerberus
         public MainWindow()
         {
             InitializeComponent();
-            Main.Content = new Home();
+            Main.NavigationService.Navigate(new Home());
+            Application.Current.MainWindow.WindowState = WindowState.Maximized;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

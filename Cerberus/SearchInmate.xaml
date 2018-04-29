@@ -10,7 +10,7 @@
 
     <Grid>
         <!--Search Bar-->
-        <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Text="Search" Height="27" Margin="10,10,0,0" Width="362"/>
+        <TextBox Name="txtSearch" VerticalAlignment="Top" Text="Search" Height="27" Margin="10,10,242.667,0"/>
 
         <!--Search Selector-->
         <ComboBox  HorizontalAlignment="Right" VerticalAlignment="Top" Width="153" Margin="0,10,85,0" SelectionChanged="ComboBox_SelectionChanged" Canvas.Left="262" Canvas.Top="12" Height="27">
@@ -19,21 +19,12 @@
         </ComboBox>
 
         <!--Buttons-->
-        <Button Content="Search" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="10, 10" Height="27" Click="Button_Click"/>
-        <ListView Name="SearchResults" HorizontalAlignment="Left" VerticalAlignment="Top" Height="325" Margin="10,50,10,10" Width="580">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" Width="300" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="ID" Width="200" DisplayMemberBinding="{Binding ID}"/>
-                    <GridViewColumn Header="Click to View" DisplayMemberBinding="{Binding InmateProfile}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Mail}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Button Content="Search" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="10, 10" Height="27" Click="SearchButton_Click"/>
+
+        <ListBox Name="SearchResults" Margin="10,47,9.667,56" SelectionChanged="SearchResults_SelectionChanged">
+
+        </ListBox>
+        <Button Name="ViewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="View Item" Margin="0,0,11.667,10" Width="103" Height="28" Click="ViewItem_Click"/>
+        <Button Name="NewInmateProfile" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="New Inmate Profile" Margin="10,0,0,10" Width="137" Height="28" Click="NewInmateProfile_Click"/>
     </Grid>
 </Page>
