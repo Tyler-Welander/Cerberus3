@@ -19,7 +19,7 @@
             <Button HorizontalContentAlignment="Left" Content="Inmate Profiles" Canvas.Left="45" Canvas.Top="65" Width="135" Background="Transparent" BorderThickness="0" Click="Button_Click"/>
             <Button HorizontalContentAlignment="Left" Content="Medical Reports" Canvas.Left="45" Canvas.Top="80" Width="135" Background="Transparent" BorderThickness="0" Click="Button_Click_1"/>
             <Button HorizontalContentAlignment="Left" Content="Inmate Schedules" Canvas.Left="45" Canvas.Top="95" Width="135" Background="Transparent" BorderThickness="0" Click="Button_Click_2"/>
-            <Button HorizontalContentAlignment="Left" Content="Behavior Reports" Canvas.Left="45" Canvas.Top="110" Width="135" Background="Transparent" BorderThickness="0"/>
+            <Button HorizontalContentAlignment="Left" Content="Behavior Reports" Canvas.Left="45" Canvas.Top="110" Width="135" Background="Transparent" BorderThickness="0" Click="Button_Click_3"/>
 
             <Label VerticalContentAlignment="Top" Canvas.Top="128" Canvas.Left="20" FontSize="20" Height="37" Width="106">
                 Employee

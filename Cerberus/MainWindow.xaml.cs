@@ -49,5 +49,10 @@ namespace Cerberus
             //Schedule
             Main.Content = new ScheduleSearch();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new SearchBehaviorReports();
+        }
     }
 }

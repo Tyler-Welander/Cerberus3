@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BehaviorReports.xaml.cs">
+      <DependentUpon>BehaviorReports.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CerberusDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -65,8 +68,14 @@
     <Compile Include="InmateSchedule.xaml.cs">
       <DependentUpon>InmateSchedule.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ScheduleSearch.xaml.cs">
-      <DependentUpon>ScheduleSearch.xaml</DependentUpon>
+    <Compile Include="Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchSchedules.xaml.cs">
+      <DependentUpon>SearchSchedules.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchBehaviorReports.xaml.cs">
+      <DependentUpon>SearchBehaviorReports.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchInmate.xaml.cs">
       <DependentUpon>SearchInmate.xaml</DependentUpon>
@@ -74,6 +83,10 @@
     <Compile Include="SearchMedicalReports.xaml.cs">
       <DependentUpon>SearchMedicalReports.xaml</DependentUpon>
     </Compile>
+    <Page Include="BehaviorReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,7 +121,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ScheduleSearch.xaml">
+    <Page Include="Report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchSchedules.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchBehaviorReports.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
