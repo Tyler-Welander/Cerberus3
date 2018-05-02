@@ -21,6 +21,7 @@ namespace Cerberus
     public partial class SearchInmate : Page
     {
         private List<Inmate> items = new List<Inmate>();
+        private CerberusDatabaseDataSet cerberusDatabaseDataSet;
         
         public SearchInmate()
         {
@@ -29,6 +30,9 @@ namespace Cerberus
             items.Add(new Inmate() { Name = "Jay Peterson", ID = "00000001", Profile = new InmateProfile("Jay") });
             items.Add(new Inmate() { Name = "Tyler Welander", ID = "00000002", Profile = new InmateProfile("Tyler") });
             items.Add(new Inmate() { Name = "Michelle Keller", ID = "00000003", Profile = new InmateProfile("Michelle") });
+
+            // Connecting to dataset
+            cerberusDatabaseDataSet = (CerberusDatabaseDataSet)FindResource("cerberusDatabaseDataSet");
 
             
         }
@@ -61,17 +65,18 @@ namespace Cerberus
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             //loads list into listbox
-            SearchResults.ItemsSource = items;
+            //SearchResults.ItemsSource = items;
         }
 
         public void ViewItem_Click(object sender, RoutedEventArgs e)
         {
-            if (SearchResults.SelectedItem != null)
+            if (((TextBlock)sender).Tag.ToString() != null)
             {
-                Inmate selected = (Inmate)SearchResults.SelectedItem;
+                //Inmate selected = (Inmate)SearchResults.SelectedItem;
+                InmateProfile profile = new InmateProfile(((TextBlock)sender).Tag.ToString());
                 
                 //txtSearch.Text = SearchResults.SelectedItem.ToString();
-                NavigationService.Navigate(selected.Profile);
+                NavigationService.Navigate(profile);
             }
         }
 
