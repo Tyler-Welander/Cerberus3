@@ -21,9 +21,13 @@
         <!--Buttons-->
         <Button Content="Search" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="10, 10" Height="27" Click="SearchButton_Click"/>
 
-        <ListBox Name="SearchResults" Margin="10,47,9.667,56" SelectionChanged="SearchResults_SelectionChanged">
+        <!--ListBox Name="SearchResults" Margin="10,47,9.667,56" SelectionChanged="SearchResults_SelectionChanged">
 
-        </ListBox>
+        </-->
+        <DataGrid Name="datagrid" Margin="10,47,9.667,56">
+
+        </DataGrid>
+        
         <Button Name="ViewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="View Inmate Profile" Margin="0,0,11.667,10" Width="120" Height="28" Click="ViewItem_Click"/>
         <Button Name="NewInmateProfile" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="New Inmate Profile" Margin="10,0,0,10" Width="137" Height="28" Click="NewInmateProfile_Click"/>
     </Grid>
