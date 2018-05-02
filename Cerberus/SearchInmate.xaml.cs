@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cerberus.CerberusDatabaseDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,20 +22,24 @@ namespace Cerberus
     public partial class SearchInmate : Page
     {
         private List<Inmate> items = new List<Inmate>();
-        private CerberusDatabaseDataSet cerberusDatabaseDataSet;
+        private CerberusDatabaseDataSet CerberusDataSet;
+        private InmatesTableAdapter inmatesTableAdapter;
         
         public SearchInmate()
         {
             InitializeComponent();
-            //List<TodoItem> items = new List<TodoItem>();
-            items.Add(new Inmate() { Name = "Jay Peterson", ID = "00000001", Profile = new InmateProfile("Jay") });
-            items.Add(new Inmate() { Name = "Tyler Welander", ID = "00000002", Profile = new InmateProfile("Tyler") });
-            items.Add(new Inmate() { Name = "Michelle Keller", ID = "00000003", Profile = new InmateProfile("Michelle") });
 
-            // Connecting to dataset
-            cerberusDatabaseDataSet = (CerberusDatabaseDataSet)FindResource("cerberusDatabaseDataSet");
+            // Construct the dataset
+            CerberusDataSet = new CerberusDatabaseDataSet();
 
-            
+            // Use a table adapter to populate the Inmates table
+            inmatesTableAdapter = new InmatesTableAdapter();
+            inmatesTableAdapter.Fill(CerberusDataSet.Inmates);
+
+            // Use the Inmates talbe as the DataContext for this window
+            grid.DataContext = CerberusDataSet.Inmates.DefaultView;
+
+
         }
 
         public class Inmate

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cerberus.CerberusDatabaseDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,38 @@ namespace Cerberus
     /// </summary>
     public partial class InmateProfile : Page
     {
-        public InmateProfile(String fname)
+        private CerberusDatabaseDataSet CerberusDataSet;
+        private InmatesTableAdapter inmatesTableAdapter;
+        private Int32 ID;
+
+        //private CollectionViewSource inmateViewSource;
+
+        public InmateProfile(String ID)
         {
             InitializeComponent();
-            txtFirstName.Text = fname;
+
+            // Construct the dataset
+            CerberusDataSet = new CerberusDatabaseDataSet();
+
+            // Parsing id from a string to integer
+            this.ID = int.Parse(ID);
+
+            // Use a table adapter to populate the Inmates table
+            inmatesTableAdapter = new InmatesTableAdapter();
+            inmatesTableAdapter.PrisonerInfo(CerberusDataSet.Inmates, Int32.Parse(ID));
+
+            // Use the Inmates talbe as the DataContext for this window
+            //grid.DataContext = CerberusDataSet.Inmates.DefaultView;
+            //inmateViewSource = (CollectionViewSource)(FindResource("inmatesViewSource"));
+            txtFirstName.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtID.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtDateOfBirth.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtSSN.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtSentence.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtLawyerName.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtEmergencyContactName.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtCellAssignment.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtJobAssignment.DataContext = CerberusDataSet.Inmates.DefaultView;
         }
 
         private void ReturntoSearch_Click(object sender, RoutedEventArgs e)
@@ -34,6 +63,17 @@ namespace Cerberus
         private void UpdateInmateProfile_Click(object sender, RoutedEventArgs e)
         {
             //Save fields in database
+            inmatesTableAdapter.UpdateInfo(txtFirstName.Text,
+                                           Int32.Parse(txtID.Text),
+                                           DateTime.Parse(txtDateOfBirth.Text),
+                                           Int32.Parse(txtSSN.Text),
+                                           txtSentence.Text,
+                                           txtLawyerName.Text,
+                                           txtJobAssignment.Text,
+                                           txtCellAssignment.Text,
+                                           txtEmergencyContactName.Text,
+                                           ID);
+            inmatesTableAdapter.Update(CerberusDataSet);
         }
     }
 }
