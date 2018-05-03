@@ -23,7 +23,7 @@ namespace Cerberus
         public MainWindow()
         {
             InitializeComponent();
-            Main.NavigationService.Navigate(new Home());
+            Main.NavigationService.Navigate(new Login());
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
         }
 
