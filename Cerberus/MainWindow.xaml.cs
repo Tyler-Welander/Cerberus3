@@ -82,5 +82,13 @@ namespace Cerberus
                 Main.Content = new EmployeeClockInOut();
             }
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            if (loggedin == true)
+            {
+                Main.Content = new SearchEmployeeProfiles();
+            }
+        }
     }
 }

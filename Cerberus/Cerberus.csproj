@@ -65,6 +65,9 @@
     <Compile Include="EmployeeClockInOut.xaml.cs">
       <DependentUpon>EmployeeClockInOut.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeProfile.xaml.cs">
+      <DependentUpon>EmployeeProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InmateMedicalHistory.xaml.cs">
       <DependentUpon>InmateMedicalHistory.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,9 @@
     </Compile>
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchEmployeeProfiles.xaml.cs">
+      <DependentUpon>SearchEmployeeProfiles.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchSchedules.xaml.cs">
       <DependentUpon>SearchSchedules.xaml</DependentUpon>
@@ -94,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EmployeeClockInOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmployeeProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +146,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchEmployeeProfiles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

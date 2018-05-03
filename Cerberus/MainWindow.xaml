@@ -25,7 +25,7 @@
                 Employee
             </Label>
 
-            <Button HorizontalContentAlignment="Left" Content="Employee Profiles" Canvas.Left="45" Canvas.Top="165" Width="135" Background="Transparent" BorderThickness="0"/>
+            <Button HorizontalContentAlignment="Left" Content="Employee Profiles" Canvas.Left="45" Canvas.Top="165" Width="135" Background="Transparent" BorderThickness="0" Click="Button_Click_5"/>
             <Button HorizontalContentAlignment="Left" Content="Clock In/Out" Canvas.Left="45" Canvas.Top="180" Width="135" Background="Transparent" BorderThickness="0" Click="Button_Click_4"/>
         </Canvas>
 
