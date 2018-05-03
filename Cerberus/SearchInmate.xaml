@@ -37,7 +37,9 @@
                         </Style>
                     </DataGridHyperlinkColumn.ElementStyle>
                 </DataGridHyperlinkColumn>
-                <DataGridTextColumn Binding="{Binding InmateName}" Header="Inmate's Name" />
+                <DataGridTextColumn Binding="{Binding InmateFirstName}" Header="Inmate's First Name" />
+                <DataGridTextColumn Binding="{Binding InmateMiddleName}" Header="Inmate's Middle Name" />
+                <DataGridTextColumn Binding="{Binding InmateLastName}" Header="Inmate's Last Name" />
             </DataGrid.Columns>
         </DataGrid>
         <Button Name="ViewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="View Inmate Profile" Margin="0,0,11.667,10" Width="120" Height="28" Click="ViewItem_Click"/>

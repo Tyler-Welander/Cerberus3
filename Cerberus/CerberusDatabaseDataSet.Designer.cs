@@ -373,6 +373,8 @@ namespace Cerberus {
             
             private global::System.Data.DataColumn columnDescription;
             
+            private global::System.Data.DataColumn columnIncidentDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Behavior_ReportsDataTable() {
@@ -448,6 +450,14 @@ namespace Cerberus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IncidentDateColumn {
+                get {
+                    return this.columnIncidentDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -483,14 +493,15 @@ namespace Cerberus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Behavior_ReportsRow AddBehavior_ReportsRow(int ID, string InmateName, int IncidentCode, EmployeesRow parentEmployeesRowByEmployeesBehavior_Reports, string Description) {
+            public Behavior_ReportsRow AddBehavior_ReportsRow(int ID, string InmateName, int IncidentCode, EmployeesRow parentEmployeesRowByEmployeesBehavior_Reports, string Description, System.DateTime IncidentDate) {
                 Behavior_ReportsRow rowBehavior_ReportsRow = ((Behavior_ReportsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         InmateName,
                         IncidentCode,
                         null,
-                        Description};
+                        Description,
+                        IncidentDate};
                 if ((parentEmployeesRowByEmployeesBehavior_Reports != null)) {
                     columnValuesArray[3] = parentEmployeesRowByEmployeesBehavior_Reports[1];
                 }
@@ -528,6 +539,7 @@ namespace Cerberus {
                 this.columnIncidentCode = base.Columns["IncidentCode"];
                 this.columnEmployeeNumber = base.Columns["EmployeeNumber"];
                 this.columnDescription = base.Columns["Description"];
+                this.columnIncidentDate = base.Columns["IncidentDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -543,6 +555,8 @@ namespace Cerberus {
                 base.Columns.Add(this.columnEmployeeNumber);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
+                this.columnIncidentDate = new global::System.Data.DataColumn("IncidentDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIncidentDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -1014,8 +1028,6 @@ namespace Cerberus {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class InmatesDataTable : global::System.Data.TypedTableBase<InmatesRow> {
             
-            private global::System.Data.DataColumn columnInmateName;
-            
             private global::System.Data.DataColumn columnID;
             
             private global::System.Data.DataColumn columnDateOfBirth;
@@ -1039,6 +1051,20 @@ namespace Cerberus {
             private global::System.Data.DataColumn columnPhysician;
             
             private global::System.Data.DataColumn columnEmergencyContact;
+            
+            private global::System.Data.DataColumn columnInmateFirstName;
+            
+            private global::System.Data.DataColumn columnInmateMiddleName;
+            
+            private global::System.Data.DataColumn columnInmateLastName;
+            
+            private global::System.Data.DataColumn columnAlias;
+            
+            private global::System.Data.DataColumn columnLawyerContactInfo;
+            
+            private global::System.Data.DataColumn columnEmergencyContactInfo;
+            
+            private global::System.Data.DataColumn columnEmergencyContactRelation;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1071,14 +1097,6 @@ namespace Cerberus {
             protected InmatesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn InmateNameColumn {
-                get {
-                    return this.columnInmateName;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1179,6 +1197,62 @@ namespace Cerberus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn InmateFirstNameColumn {
+                get {
+                    return this.columnInmateFirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn InmateMiddleNameColumn {
+                get {
+                    return this.columnInmateMiddleName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn InmateLastNameColumn {
+                get {
+                    return this.columnInmateLastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AliasColumn {
+                get {
+                    return this.columnAlias;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn LawyerContactInfoColumn {
+                get {
+                    return this.columnLawyerContactInfo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EmergencyContactInfoColumn {
+                get {
+                    return this.columnEmergencyContactInfo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EmergencyContactRelationColumn {
+                get {
+                    return this.columnEmergencyContactRelation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1214,10 +1288,28 @@ namespace Cerberus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InmatesRow AddInmatesRow(string InmateName, Behavior_ReportsRow parentBehavior_ReportsRowByBehavior_ReportsPrisoners, System.DateTime DateOfBirth, int SocialSecurityNumber, string Sentence, string Lawyer, string CurrentJob, string InmateCell, string Medications, string Allergies, string Medical_History, string Physician, string EmergencyContact) {
+            public InmatesRow AddInmatesRow(
+                        Behavior_ReportsRow parentBehavior_ReportsRowByBehavior_ReportsPrisoners, 
+                        System.DateTime DateOfBirth, 
+                        int SocialSecurityNumber, 
+                        string Sentence, 
+                        string Lawyer, 
+                        string CurrentJob, 
+                        string InmateCell, 
+                        string Medications, 
+                        string Allergies, 
+                        string Medical_History, 
+                        string Physician, 
+                        string EmergencyContact, 
+                        string InmateFirstName, 
+                        string InmateMiddleName, 
+                        string InmateLastName, 
+                        string Alias, 
+                        string LawyerContactInfo, 
+                        string EmergencyContactInfo, 
+                        string EmergencyContactRelation) {
                 InmatesRow rowInmatesRow = ((InmatesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        InmateName,
                         null,
                         DateOfBirth,
                         SocialSecurityNumber,
@@ -1229,9 +1321,16 @@ namespace Cerberus {
                         Allergies,
                         Medical_History,
                         Physician,
-                        EmergencyContact};
+                        EmergencyContact,
+                        InmateFirstName,
+                        InmateMiddleName,
+                        InmateLastName,
+                        Alias,
+                        LawyerContactInfo,
+                        EmergencyContactInfo,
+                        EmergencyContactRelation};
                 if ((parentBehavior_ReportsRowByBehavior_ReportsPrisoners != null)) {
-                    columnValuesArray[1] = parentBehavior_ReportsRowByBehavior_ReportsPrisoners[0];
+                    columnValuesArray[0] = parentBehavior_ReportsRowByBehavior_ReportsPrisoners[0];
                 }
                 rowInmatesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInmatesRow);
@@ -1262,7 +1361,6 @@ namespace Cerberus {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnInmateName = base.Columns["InmateName"];
                 this.columnID = base.Columns["ID"];
                 this.columnDateOfBirth = base.Columns["DateOfBirth"];
                 this.columnSocialSecurityNumber = base.Columns["SocialSecurityNumber"];
@@ -1275,13 +1373,18 @@ namespace Cerberus {
                 this.columnMedical_History = base.Columns["Medical History"];
                 this.columnPhysician = base.Columns["Physician"];
                 this.columnEmergencyContact = base.Columns["EmergencyContact"];
+                this.columnInmateFirstName = base.Columns["InmateFirstName"];
+                this.columnInmateMiddleName = base.Columns["InmateMiddleName"];
+                this.columnInmateLastName = base.Columns["InmateLastName"];
+                this.columnAlias = base.Columns["Alias"];
+                this.columnLawyerContactInfo = base.Columns["LawyerContactInfo"];
+                this.columnEmergencyContactInfo = base.Columns["EmergencyContactInfo"];
+                this.columnEmergencyContactRelation = base.Columns["EmergencyContactRelation"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnInmateName = new global::System.Data.DataColumn("InmateName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInmateName);
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
                 this.columnDateOfBirth = new global::System.Data.DataColumn("DateOfBirth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1306,9 +1409,22 @@ namespace Cerberus {
                 base.Columns.Add(this.columnPhysician);
                 this.columnEmergencyContact = new global::System.Data.DataColumn("EmergencyContact", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmergencyContact);
+                this.columnInmateFirstName = new global::System.Data.DataColumn("InmateFirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInmateFirstName);
+                this.columnInmateMiddleName = new global::System.Data.DataColumn("InmateMiddleName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInmateMiddleName);
+                this.columnInmateLastName = new global::System.Data.DataColumn("InmateLastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInmateLastName);
+                this.columnAlias = new global::System.Data.DataColumn("Alias", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAlias);
+                this.columnLawyerContactInfo = new global::System.Data.DataColumn("LawyerContactInfo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLawyerContactInfo);
+                this.columnEmergencyContactInfo = new global::System.Data.DataColumn("EmergencyContactInfo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmergencyContactInfo);
+                this.columnEmergencyContactRelation = new global::System.Data.DataColumn("EmergencyContactRelation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmergencyContactRelation);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnInmateName.MaxLength = 255;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnSentence.MaxLength = 255;
@@ -1320,6 +1436,13 @@ namespace Cerberus {
                 this.columnMedical_History.MaxLength = 536870910;
                 this.columnPhysician.MaxLength = 255;
                 this.columnEmergencyContact.MaxLength = 255;
+                this.columnInmateFirstName.MaxLength = 255;
+                this.columnInmateMiddleName.MaxLength = 255;
+                this.columnInmateLastName.MaxLength = 255;
+                this.columnAlias.MaxLength = 255;
+                this.columnLawyerContactInfo.MaxLength = 255;
+                this.columnEmergencyContactInfo.MaxLength = 255;
+                this.columnEmergencyContactRelation.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1537,6 +1660,22 @@ namespace Cerberus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime IncidentDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableBehavior_Reports.IncidentDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IncidentDate\' in table \'Behavior_Reports\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBehavior_Reports.IncidentDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public EmployeesRow EmployeesRow {
                 get {
                     return ((EmployeesRow)(this.GetParentRow(this.Table.ParentRelations["EmployeesBehavior_Reports"])));
@@ -1592,6 +1731,18 @@ namespace Cerberus {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDescriptionNull() {
                 this[this.tableBehavior_Reports.DescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIncidentDateNull() {
+                return this.IsNull(this.tableBehavior_Reports.IncidentDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIncidentDateNull() {
+                this[this.tableBehavior_Reports.IncidentDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1799,22 +1950,6 @@ namespace Cerberus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string InmateName {
-                get {
-                    try {
-                        return ((string)(this[this.tableInmates.InmateNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'InmateName\' in table \'Inmates\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInmates.InmateNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int ID {
                 get {
                     return ((int)(this[this.tableInmates.IDColumn]));
@@ -2002,6 +2137,118 @@ namespace Cerberus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string InmateFirstName {
+                get {
+                    try {
+                        return ((string)(this[this.tableInmates.InmateFirstNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InmateFirstName\' in table \'Inmates\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInmates.InmateFirstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string InmateMiddleName {
+                get {
+                    try {
+                        return ((string)(this[this.tableInmates.InmateMiddleNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InmateMiddleName\' in table \'Inmates\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInmates.InmateMiddleNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string InmateLastName {
+                get {
+                    try {
+                        return ((string)(this[this.tableInmates.InmateLastNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InmateLastName\' in table \'Inmates\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInmates.InmateLastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Alias {
+                get {
+                    try {
+                        return ((string)(this[this.tableInmates.AliasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Alias\' in table \'Inmates\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInmates.AliasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string LawyerContactInfo {
+                get {
+                    try {
+                        return ((string)(this[this.tableInmates.LawyerContactInfoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LawyerContactInfo\' in table \'Inmates\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInmates.LawyerContactInfoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string EmergencyContactInfo {
+                get {
+                    try {
+                        return ((string)(this[this.tableInmates.EmergencyContactInfoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmergencyContactInfo\' in table \'Inmates\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInmates.EmergencyContactInfoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string EmergencyContactRelation {
+                get {
+                    try {
+                        return ((string)(this[this.tableInmates.EmergencyContactRelationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmergencyContactRelation\' in table \'Inmates\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInmates.EmergencyContactRelationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Behavior_ReportsRow Behavior_ReportsRow {
                 get {
                     return ((Behavior_ReportsRow)(this.GetParentRow(this.Table.ParentRelations["Behavior_ReportsPrisoners"])));
@@ -2009,18 +2256,6 @@ namespace Cerberus {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Behavior_ReportsPrisoners"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsInmateNameNull() {
-                return this.IsNull(this.tableInmates.InmateNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetInmateNameNull() {
-                this[this.tableInmates.InmateNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2153,6 +2388,90 @@ namespace Cerberus {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetEmergencyContactNull() {
                 this[this.tableInmates.EmergencyContactColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsInmateFirstNameNull() {
+                return this.IsNull(this.tableInmates.InmateFirstNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetInmateFirstNameNull() {
+                this[this.tableInmates.InmateFirstNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsInmateMiddleNameNull() {
+                return this.IsNull(this.tableInmates.InmateMiddleNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetInmateMiddleNameNull() {
+                this[this.tableInmates.InmateMiddleNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsInmateLastNameNull() {
+                return this.IsNull(this.tableInmates.InmateLastNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetInmateLastNameNull() {
+                this[this.tableInmates.InmateLastNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAliasNull() {
+                return this.IsNull(this.tableInmates.AliasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAliasNull() {
+                this[this.tableInmates.AliasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsLawyerContactInfoNull() {
+                return this.IsNull(this.tableInmates.LawyerContactInfoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetLawyerContactInfoNull() {
+                this[this.tableInmates.LawyerContactInfoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsEmergencyContactInfoNull() {
+                return this.IsNull(this.tableInmates.EmergencyContactInfoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetEmergencyContactInfoNull() {
+                this[this.tableInmates.EmergencyContactInfoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsEmergencyContactRelationNull() {
+                return this.IsNull(this.tableInmates.EmergencyContactRelationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetEmergencyContactRelationNull() {
+                this[this.tableInmates.EmergencyContactRelationColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2388,13 +2707,11 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("IncidentCode", "IncidentCode");
             tableMapping.ColumnMappings.Add("EmployeeNumber", "EmployeeNumber");
             tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("IncidentDate", "IncidentDate");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Behavior_Reports` WHERE ((`ID` = ?) AND ((? = 1 AND `InmateName` IS " +
-                "NULL) OR (`InmateName` = ?)) AND ((? = 1 AND `IncidentCode` IS NULL) OR (`Incide" +
-                "ntCode` = ?)) AND ((? = 1 AND `EmployeeNumber` IS NULL) OR (`EmployeeNumber` = ?" +
-                ")))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Behavior_Reports` WHERE ((`ID` = ?) AND ((? = 1 AND `InmateName` IS NULL) OR (`InmateName` = ?)) AND ((? = 1 AND `IncidentCode` IS NULL) OR (`IncidentCode` = ?)) AND ((? = 1 AND `EmployeeNumber` IS NULL) OR (`EmployeeNumber` = ?)) AND ((? = 1 AND `IncidentDate` IS NULL) OR (`IncidentDate` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Original, true, null));
@@ -2403,25 +2720,29 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_IncidentCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentCode", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_EmployeeNumber", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmployeeNumber", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_EmployeeNumber", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmployeeNumber", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_IncidentDate", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentDate", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_IncidentDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentDate", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Behavior_Reports` (`ID`, `InmateName`, `IncidentCode`, `EmployeeNumb" +
-                "er`, `Description`) VALUES (?, ?, ?, ?, ?)";
+                "er`, `Description`, `IncidentDate`) VALUES (?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IncidentCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentCode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EmployeeNumber", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmployeeNumber", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Description", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IncidentDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentDate", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Behavior_Reports` SET `ID` = ?, `InmateName` = ?, `IncidentCode` = ?, `EmployeeNumber` = ?, `Description` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `InmateName` IS NULL) OR (`InmateName` = ?)) AND ((? = 1 AND `IncidentCode` IS NULL) OR (`IncidentCode` = ?)) AND ((? = 1 AND `EmployeeNumber` IS NULL) OR (`EmployeeNumber` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Behavior_Reports` SET `ID` = ?, `InmateName` = ?, `IncidentCode` = ?, `EmployeeNumber` = ?, `Description` = ?, `IncidentDate` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `InmateName` IS NULL) OR (`InmateName` = ?)) AND ((? = 1 AND `IncidentCode` IS NULL) OR (`IncidentCode` = ?)) AND ((? = 1 AND `EmployeeNumber` IS NULL) OR (`EmployeeNumber` = ?)) AND ((? = 1 AND `IncidentDate` IS NULL) OR (`IncidentDate` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IncidentCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentCode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EmployeeNumber", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmployeeNumber", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Description", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IncidentDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentDate", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Original, false, null));
@@ -2429,6 +2750,8 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_IncidentCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentCode", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_EmployeeNumber", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmployeeNumber", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_EmployeeNumber", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmployeeNumber", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_IncidentDate", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentDate", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_IncidentDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IncidentDate", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2444,8 +2767,8 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, InmateName, IncidentCode, EmployeeNumber, Description FROM Behavior_Re" +
-                "ports";
+            this._commandCollection[0].CommandText = "SELECT ID, InmateName, IncidentCode, EmployeeNumber, Description, IncidentDate FR" +
+                "OM Behavior_Reports";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2506,7 +2829,7 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_InmateName, global::System.Nullable<int> Original_IncidentCode, global::System.Nullable<int> Original_EmployeeNumber) {
+        public virtual int Delete(int Original_ID, string Original_InmateName, global::System.Nullable<int> Original_IncidentCode, global::System.Nullable<int> Original_EmployeeNumber, global::System.Nullable<global::System.DateTime> Original_IncidentDate) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_InmateName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -2532,6 +2855,14 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Original_IncidentDate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_IncidentDate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2552,7 +2883,7 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string InmateName, global::System.Nullable<int> IncidentCode, global::System.Nullable<int> EmployeeNumber, string Description) {
+        public virtual int Insert(int ID, string InmateName, global::System.Nullable<int> IncidentCode, global::System.Nullable<int> EmployeeNumber, string Description, global::System.Nullable<global::System.DateTime> IncidentDate) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
             if ((InmateName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2578,6 +2909,12 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Description));
             }
+            if ((IncidentDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(IncidentDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2598,7 +2935,7 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string InmateName, global::System.Nullable<int> IncidentCode, global::System.Nullable<int> EmployeeNumber, string Description, int Original_ID, string Original_InmateName, global::System.Nullable<int> Original_IncidentCode, global::System.Nullable<int> Original_EmployeeNumber) {
+        public virtual int Update(int ID, string InmateName, global::System.Nullable<int> IncidentCode, global::System.Nullable<int> EmployeeNumber, string Description, global::System.Nullable<global::System.DateTime> IncidentDate, int Original_ID, string Original_InmateName, global::System.Nullable<int> Original_IncidentCode, global::System.Nullable<int> Original_EmployeeNumber, global::System.Nullable<global::System.DateTime> Original_IncidentDate) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
             if ((InmateName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2624,30 +2961,44 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Description));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID));
-            if ((Original_InmateName == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((IncidentDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(IncidentDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_InmateName));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
+            if ((Original_InmateName == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_InmateName));
             }
             if ((Original_IncidentCode.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_IncidentCode.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_IncidentCode.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_EmployeeNumber.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_EmployeeNumber.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_EmployeeNumber.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IncidentDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_IncidentDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2669,8 +3020,8 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string InmateName, global::System.Nullable<int> IncidentCode, global::System.Nullable<int> EmployeeNumber, string Description, int Original_ID, string Original_InmateName, global::System.Nullable<int> Original_IncidentCode, global::System.Nullable<int> Original_EmployeeNumber) {
-            return this.Update(Original_ID, InmateName, IncidentCode, EmployeeNumber, Description, Original_ID, Original_InmateName, Original_IncidentCode, Original_EmployeeNumber);
+        public virtual int Update(string InmateName, global::System.Nullable<int> IncidentCode, global::System.Nullable<int> EmployeeNumber, string Description, global::System.Nullable<global::System.DateTime> IncidentDate, int Original_ID, string Original_InmateName, global::System.Nullable<int> Original_IncidentCode, global::System.Nullable<int> Original_EmployeeNumber, global::System.Nullable<global::System.DateTime> Original_IncidentDate) {
+            return this.Update(Original_ID, InmateName, IncidentCode, EmployeeNumber, Description, IncidentDate, Original_ID, Original_InmateName, Original_IncidentCode, Original_EmployeeNumber, Original_IncidentDate);
         }
     }
     
@@ -3218,7 +3569,6 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Inmates";
-            tableMapping.ColumnMappings.Add("InmateName", "InmateName");
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("DateOfBirth", "DateOfBirth");
             tableMapping.ColumnMappings.Add("SocialSecurityNumber", "SocialSecurityNumber");
@@ -3231,13 +3581,18 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Medical History", "Medical History");
             tableMapping.ColumnMappings.Add("Physician", "Physician");
             tableMapping.ColumnMappings.Add("EmergencyContact", "EmergencyContact");
+            tableMapping.ColumnMappings.Add("InmateFirstName", "InmateFirstName");
+            tableMapping.ColumnMappings.Add("InmateMiddleName", "InmateMiddleName");
+            tableMapping.ColumnMappings.Add("InmateLastName", "InmateLastName");
+            tableMapping.ColumnMappings.Add("Alias", "Alias");
+            tableMapping.ColumnMappings.Add("LawyerContactInfo", "LawyerContactInfo");
+            tableMapping.ColumnMappings.Add("EmergencyContactInfo", "EmergencyContactInfo");
+            tableMapping.ColumnMappings.Add("EmergencyContactRelation", "EmergencyContactRelation");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Inmates` WHERE (((? = 1 AND `InmateName` IS NULL) OR (`InmateName` = ?)) AND (`ID` = ?) AND ((? = 1 AND `DateOfBirth` IS NULL) OR (`DateOfBirth` = ?)) AND ((? = 1 AND `SocialSecurityNumber` IS NULL) OR (`SocialSecurityNumber` = ?)) AND ((? = 1 AND `Sentence` IS NULL) OR (`Sentence` = ?)) AND ((? = 1 AND `Lawyer` IS NULL) OR (`Lawyer` = ?)) AND ((? = 1 AND `CurrentJob` IS NULL) OR (`CurrentJob` = ?)) AND ((? = 1 AND `InmateCell` IS NULL) OR (`InmateCell` = ?)) AND ((? = 1 AND `Medications` IS NULL) OR (`Medications` = ?)) AND ((? = 1 AND `Allergies` IS NULL) OR (`Allergies` = ?)) AND ((? = 1 AND `Physician` IS NULL) OR (`Physician` = ?)) AND ((? = 1 AND `EmergencyContact` IS NULL) OR (`EmergencyContact` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Inmates` WHERE ((`ID` = ?) AND ((? = 1 AND `DateOfBirth` IS NULL) OR (`DateOfBirth` = ?)) AND ((? = 1 AND `SocialSecurityNumber` IS NULL) OR (`SocialSecurityNumber` = ?)) AND ((? = 1 AND `Sentence` IS NULL) OR (`Sentence` = ?)) AND ((? = 1 AND `Lawyer` IS NULL) OR (`Lawyer` = ?)) AND ((? = 1 AND `CurrentJob` IS NULL) OR (`CurrentJob` = ?)) AND ((? = 1 AND `InmateCell` IS NULL) OR (`InmateCell` = ?)) AND ((? = 1 AND `Medications` IS NULL) OR (`Medications` = ?)) AND ((? = 1 AND `Allergies` IS NULL) OR (`Allergies` = ?)) AND ((? = 1 AND `Physician` IS NULL) OR (`Physician` = ?)) AND ((? = 1 AND `EmergencyContact` IS NULL) OR (`EmergencyContact` = ?)) AND ((? = 1 AND `InmateFirstName` IS NULL) OR (`InmateFirstName` = ?)) AND ((? = 1 AND `InmateLastName` IS NULL) OR (`InmateLastName` = ?)) AND ((? = 1 AND `InmateMiddleName` IS NULL) OR (`InmateMiddleName` = ?)) AND ((? = 1 AND `Alias` IS NULL) OR (`Alias` = ?)) AND ((? = 1 AND `EmergencyContactInfo` IS NULL) OR (`EmergencyContactInfo` = ?)) AND ((? = 1 AND `EmergencyContactRelation` IS NULL) OR (`EmergencyContactRelation` = ?)) AND ((? = 1 AND `LawyerContactInfo` IS NULL) OR (`LawyerContactInfo` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DateOfBirth", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DateOfBirth", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DateOfBirth", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DateOfBirth", global::System.Data.DataRowVersion.Original, false, null));
@@ -3259,11 +3614,24 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Physician", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Physician", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_EmergencyContact", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContact", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_EmergencyContact", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContact", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateFirstName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateFirstName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateFirstName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateFirstName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateLastName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateLastName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateLastName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateLastName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateMiddleName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateMiddleName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateMiddleName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateMiddleName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Alias", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Alias", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Alias", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Alias", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_EmergencyContactInfo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactInfo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_EmergencyContactInfo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactInfo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_EmergencyContactRelation", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactRelation", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_EmergencyContactRelation", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactRelation", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_LawyerContactInfo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LawyerContactInfo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LawyerContactInfo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LawyerContactInfo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Inmates` (`InmateName`, `ID`, `DateOfBirth`, `SocialSecurityNumber`, `Sentence`, `Lawyer`, `CurrentJob`, `InmateCell`, `Medications`, `Allergies`, `Medical History`, `Physician`, `EmergencyContact`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Inmates` (`ID`, `DateOfBirth`, `SocialSecurityNumber`, `Sentence`, `Lawyer`, `CurrentJob`, `InmateCell`, `Medications`, `Allergies`, `Medical History`, `Physician`, `EmergencyContact`, `InmateFirstName`, `InmateLastName`, `InmateMiddleName`, `Alias`, `EmergencyContactInfo`, `EmergencyContactRelation`, `LawyerContactInfo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DateOfBirth", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DateOfBirth", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SocialSecurityNumber", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SocialSecurityNumber", global::System.Data.DataRowVersion.Current, false, null));
@@ -3276,11 +3644,36 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Medical_History", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Medical History", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Physician", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Physician", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EmergencyContact", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContact", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateFirstName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateFirstName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateLastName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateLastName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateMiddleName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateMiddleName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Alias", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Alias", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EmergencyContactInfo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactInfo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EmergencyContactRelation", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactRelation", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LawyerContactInfo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LawyerContactInfo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Inmates` SET `InmateName` = ?, `ID` = ?, `DateOfBirth` = ?, `SocialSecurityNumber` = ?, `Sentence` = ?, `Lawyer` = ?, `CurrentJob` = ?, `InmateCell` = ?, `Medications` = ?, `Allergies` = ?, `Medical History` = ?, `Physician` = ?, `EmergencyContact` = ? WHERE (((? = 1 AND `InmateName` IS NULL) OR (`InmateName` = ?)) AND (`ID` = ?) AND ((? = 1 AND `DateOfBirth` IS NULL) OR (`DateOfBirth` = ?)) AND ((? = 1 AND `SocialSecurityNumber` IS NULL) OR (`SocialSecurityNumber` = ?)) AND ((? = 1 AND `Sentence` IS NULL) OR (`Sentence` = ?)) AND ((? = 1 AND `Lawyer` IS NULL) OR (`Lawyer` = ?)) AND ((? = 1 AND `CurrentJob` IS NULL) OR (`CurrentJob` = ?)) AND ((? = 1 AND `InmateCell` IS NULL) OR (`InmateCell` = ?)) AND ((? = 1 AND `Medications` IS NULL) OR (`Medications` = ?)) AND ((? = 1 AND `Allergies` IS NULL) OR (`Allergies` = ?)) AND ((? = 1 AND `Physician` IS NULL) OR (`Physician` = ?)) AND ((? = 1 AND `EmergencyContact` IS NULL) OR (`EmergencyContact` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Inmates` SET `ID` = ?, `DateOfBirth` = ?, `SocialSecurityNumber` = ?, `Se" +
+                "ntence` = ?, `Lawyer` = ?, `CurrentJob` = ?, `InmateCell` = ?, `Medications` = ?" +
+                ", `Allergies` = ?, `Medical History` = ?, `Physician` = ?, `EmergencyContact` = " +
+                "?, `InmateFirstName` = ?, `InmateLastName` = ?, `InmateMiddleName` = ?, `Alias` " +
+                "= ?, `EmergencyContactInfo` = ?, `EmergencyContactRelation` = ?, `LawyerContactI" +
+                "nfo` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `DateOfBirth` IS NULL) OR (`DateOfBir" +
+                "th` = ?)) AND ((? = 1 AND `SocialSecurityNumber` IS NULL) OR (`SocialSecurityNum" +
+                "ber` = ?)) AND ((? = 1 AND `Sentence` IS NULL) OR (`Sentence` = ?)) AND ((? = 1 " +
+                "AND `Lawyer` IS NULL) OR (`Lawyer` = ?)) AND ((? = 1 AND `CurrentJob` IS NULL) O" +
+                "R (`CurrentJob` = ?)) AND ((? = 1 AND `InmateCell` IS NULL) OR (`InmateCell` = ?" +
+                ")) AND ((? = 1 AND `Medications` IS NULL) OR (`Medications` = ?)) AND ((? = 1 AN" +
+                "D `Allergies` IS NULL) OR (`Allergies` = ?)) AND ((? = 1 AND `Physician` IS NULL" +
+                ") OR (`Physician` = ?)) AND ((? = 1 AND `EmergencyContact` IS NULL) OR (`Emergen" +
+                "cyContact` = ?)) AND ((? = 1 AND `InmateFirstName` IS NULL) OR (`InmateFirstName" +
+                "` = ?)) AND ((? = 1 AND `InmateLastName` IS NULL) OR (`InmateLastName` = ?)) AND" +
+                " ((? = 1 AND `InmateMiddleName` IS NULL) OR (`InmateMiddleName` = ?)) AND ((? = " +
+                "1 AND `Alias` IS NULL) OR (`Alias` = ?)) AND ((? = 1 AND `EmergencyContactInfo` " +
+                "IS NULL) OR (`EmergencyContactInfo` = ?)) AND ((? = 1 AND `EmergencyContactRelat" +
+                "ion` IS NULL) OR (`EmergencyContactRelation` = ?)) AND ((? = 1 AND `LawyerContac" +
+                "tInfo` IS NULL) OR (`LawyerContactInfo` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DateOfBirth", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DateOfBirth", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SocialSecurityNumber", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SocialSecurityNumber", global::System.Data.DataRowVersion.Current, false, null));
@@ -3293,8 +3686,13 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Medical_History", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Medical History", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Physician", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Physician", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EmergencyContact", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContact", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateFirstName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateFirstName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateLastName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateLastName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("InmateMiddleName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateMiddleName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Alias", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Alias", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EmergencyContactInfo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactInfo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EmergencyContactRelation", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactRelation", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LawyerContactInfo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LawyerContactInfo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DateOfBirth", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DateOfBirth", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DateOfBirth", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DateOfBirth", global::System.Data.DataRowVersion.Original, false, null));
@@ -3316,6 +3714,20 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Physician", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Physician", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_EmergencyContact", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContact", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_EmergencyContact", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContact", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateFirstName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateFirstName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateFirstName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateFirstName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateLastName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateLastName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateLastName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateLastName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_InmateMiddleName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateMiddleName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_InmateMiddleName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "InmateMiddleName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Alias", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Alias", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Alias", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Alias", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_EmergencyContactInfo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactInfo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_EmergencyContactInfo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactInfo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_EmergencyContactRelation", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactRelation", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_EmergencyContactRelation", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EmergencyContactRelation", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_LawyerContactInfo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LawyerContactInfo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LawyerContactInfo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LawyerContactInfo", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3331,15 +3743,11 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT InmateName, ID, DateOfBirth, SocialSecurityNumber, Sentence, Lawyer, Curre" +
-                "ntJob, InmateCell, Medications, Allergies, [Medical History], Physician, Emergen" +
-                "cyContact FROM Inmates";
+            this._commandCollection[0].CommandText = @"SELECT ID, DateOfBirth, SocialSecurityNumber, Sentence, Lawyer, CurrentJob, InmateCell, Medications, Allergies, [Medical History], Physician, EmergencyContact, InmateFirstName, InmateLastName, InmateMiddleName, Alias, EmergencyContactInfo, EmergencyContactRelation, LawyerContactInfo FROM Inmates";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        InmateName, ID, DateOfBirth, SocialSecurityNumber, Sentence, Lawyer" +
-                ", CurrentJob, InmateCell, EmergencyContact\r\nFROM            Inmates\r\nWHERE      " +
-                "  (ID = ?)";
+            this._commandCollection[1].CommandText = @"SELECT ID, DateOfBirth, SocialSecurityNumber, Sentence, Lawyer, CurrentJob, InmateCell, EmergencyContact, InmateFirstName, InmateLastName, InmateMiddleName, Alias, EmergencyContactInfo, EmergencyContactRelation, LawyerContactInfo FROM Inmates WHERE (ID = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
@@ -3431,95 +3839,161 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_InmateName, int Original_ID, global::System.Nullable<global::System.DateTime> Original_DateOfBirth, global::System.Nullable<int> Original_SocialSecurityNumber, string Original_Sentence, string Original_Lawyer, string Original_CurrentJob, string Original_InmateCell, string Original_Medications, string Original_Allergies, string Original_Physician, string Original_EmergencyContact) {
-            if ((Original_InmateName == null)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+        public virtual int Delete(
+                    int Original_ID, 
+                    global::System.Nullable<global::System.DateTime> Original_DateOfBirth, 
+                    global::System.Nullable<int> Original_SocialSecurityNumber, 
+                    string Original_Sentence, 
+                    string Original_Lawyer, 
+                    string Original_CurrentJob, 
+                    string Original_InmateCell, 
+                    string Original_Medications, 
+                    string Original_Allergies, 
+                    string Original_Physician, 
+                    string Original_EmergencyContact, 
+                    string Original_InmateFirstName, 
+                    string Original_InmateLastName, 
+                    string Original_InmateMiddleName, 
+                    string Original_Alias, 
+                    string Original_EmergencyContactInfo, 
+                    string Original_EmergencyContactRelation, 
+                    string Original_LawyerContactInfo) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            if ((Original_DateOfBirth.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DateOfBirth.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_InmateName));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ID));
-            if ((Original_DateOfBirth.HasValue == true)) {
+            if ((Original_SocialSecurityNumber.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DateOfBirth.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_SocialSecurityNumber.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_SocialSecurityNumber.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_SocialSecurityNumber.Value));
-            }
-            else {
+            if ((Original_Sentence == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_Sentence == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Sentence));
+            }
+            if ((Original_Lawyer == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Sentence));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Lawyer));
             }
-            if ((Original_Lawyer == null)) {
+            if ((Original_CurrentJob == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Lawyer));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_CurrentJob));
             }
-            if ((Original_CurrentJob == null)) {
+            if ((Original_InmateCell == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_CurrentJob));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_InmateCell));
             }
-            if ((Original_InmateCell == null)) {
+            if ((Original_Medications == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_InmateCell));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Medications));
             }
-            if ((Original_Medications == null)) {
+            if ((Original_Allergies == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Medications));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Allergies));
             }
-            if ((Original_Allergies == null)) {
+            if ((Original_Physician == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Allergies));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Physician));
             }
-            if ((Original_Physician == null)) {
+            if ((Original_EmergencyContact == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_Physician));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_EmergencyContact));
             }
-            if ((Original_EmergencyContact == null)) {
+            if ((Original_InmateFirstName == null)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_EmergencyContact));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_InmateFirstName));
+            }
+            if ((Original_InmateLastName == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_InmateLastName));
+            }
+            if ((Original_InmateMiddleName == null)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_InmateMiddleName));
+            }
+            if ((Original_Alias == null)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_Alias));
+            }
+            if ((Original_EmergencyContactInfo == null)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_EmergencyContactInfo));
+            }
+            if ((Original_EmergencyContactRelation == null)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_EmergencyContactRelation));
+            }
+            if ((Original_LawyerContactInfo == null)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_LawyerContactInfo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3541,79 +4015,134 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string InmateName, int ID, global::System.Nullable<global::System.DateTime> DateOfBirth, global::System.Nullable<int> SocialSecurityNumber, string Sentence, string Lawyer, string CurrentJob, string InmateCell, string Medications, string Allergies, string Medical_History, string Physician, string EmergencyContact) {
-            if ((InmateName == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(
+                    int ID, 
+                    global::System.Nullable<global::System.DateTime> DateOfBirth, 
+                    global::System.Nullable<int> SocialSecurityNumber, 
+                    string Sentence, 
+                    string Lawyer, 
+                    string CurrentJob, 
+                    string InmateCell, 
+                    string Medications, 
+                    string Allergies, 
+                    string Medical_History, 
+                    string Physician, 
+                    string EmergencyContact, 
+                    string InmateFirstName, 
+                    string InmateLastName, 
+                    string InmateMiddleName, 
+                    string Alias, 
+                    string EmergencyContactInfo, 
+                    string EmergencyContactRelation, 
+                    string LawyerContactInfo) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+            if ((DateOfBirth.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(DateOfBirth.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(InmateName));
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID));
-            if ((DateOfBirth.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateOfBirth.Value));
+            if ((SocialSecurityNumber.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(SocialSecurityNumber.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((SocialSecurityNumber.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(SocialSecurityNumber.Value));
-            }
-            else {
+            if ((Sentence == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Sentence == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Sentence));
+            }
+            if ((Lawyer == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Sentence));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Lawyer));
             }
-            if ((Lawyer == null)) {
+            if ((CurrentJob == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Lawyer));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(CurrentJob));
             }
-            if ((CurrentJob == null)) {
+            if ((InmateCell == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(CurrentJob));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(InmateCell));
             }
-            if ((InmateCell == null)) {
+            if ((Medications == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(InmateCell));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Medications));
             }
-            if ((Medications == null)) {
+            if ((Allergies == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Medications));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Allergies));
             }
-            if ((Allergies == null)) {
+            if ((Medical_History == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Allergies));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Medical_History));
             }
-            if ((Medical_History == null)) {
+            if ((Physician == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Medical_History));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Physician));
             }
-            if ((Physician == null)) {
+            if ((EmergencyContact == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Physician));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(EmergencyContact));
             }
-            if ((EmergencyContact == null)) {
+            if ((InmateFirstName == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(EmergencyContact));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(InmateFirstName));
+            }
+            if ((InmateLastName == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(InmateLastName));
+            }
+            if ((InmateMiddleName == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(InmateMiddleName));
+            }
+            if ((Alias == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Alias));
+            }
+            if ((EmergencyContactInfo == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(EmergencyContactInfo));
+            }
+            if ((EmergencyContactRelation == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(EmergencyContactRelation));
+            }
+            if ((LawyerContactInfo == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(LawyerContactInfo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3636,7 +4165,6 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string InmateName, 
                     int ID, 
                     global::System.Nullable<global::System.DateTime> DateOfBirth, 
                     global::System.Nullable<int> SocialSecurityNumber, 
@@ -3649,7 +4177,13 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
                     string Medical_History, 
                     string Physician, 
                     string EmergencyContact, 
-                    string Original_InmateName, 
+                    string InmateFirstName, 
+                    string InmateLastName, 
+                    string InmateMiddleName, 
+                    string Alias, 
+                    string EmergencyContactInfo, 
+                    string EmergencyContactRelation, 
+                    string LawyerContactInfo, 
                     int Original_ID, 
                     global::System.Nullable<global::System.DateTime> Original_DateOfBirth, 
                     global::System.Nullable<int> Original_SocialSecurityNumber, 
@@ -3660,168 +4194,259 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
                     string Original_Medications, 
                     string Original_Allergies, 
                     string Original_Physician, 
-                    string Original_EmergencyContact) {
-            if ((InmateName == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                    string Original_EmergencyContact, 
+                    string Original_InmateFirstName, 
+                    string Original_InmateLastName, 
+                    string Original_InmateMiddleName, 
+                    string Original_Alias, 
+                    string Original_EmergencyContactInfo, 
+                    string Original_EmergencyContactRelation, 
+                    string Original_LawyerContactInfo) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+            if ((DateOfBirth.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(DateOfBirth.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(InmateName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID));
-            if ((DateOfBirth.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateOfBirth.Value));
+            if ((SocialSecurityNumber.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(SocialSecurityNumber.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((SocialSecurityNumber.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(SocialSecurityNumber.Value));
-            }
-            else {
+            if ((Sentence == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Sentence == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Sentence));
+            }
+            if ((Lawyer == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Sentence));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Lawyer));
             }
-            if ((Lawyer == null)) {
+            if ((CurrentJob == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Lawyer));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(CurrentJob));
             }
-            if ((CurrentJob == null)) {
+            if ((InmateCell == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(CurrentJob));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(InmateCell));
             }
-            if ((InmateCell == null)) {
+            if ((Medications == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(InmateCell));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Medications));
             }
-            if ((Medications == null)) {
+            if ((Allergies == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Medications));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Allergies));
             }
-            if ((Allergies == null)) {
+            if ((Medical_History == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Allergies));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Medical_History));
             }
-            if ((Medical_History == null)) {
+            if ((Physician == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Medical_History));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Physician));
             }
-            if ((Physician == null)) {
+            if ((EmergencyContact == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Physician));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(EmergencyContact));
             }
-            if ((EmergencyContact == null)) {
+            if ((InmateFirstName == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(EmergencyContact));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(InmateFirstName));
             }
-            if ((Original_InmateName == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+            if ((InmateLastName == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(InmateLastName));
+            }
+            if ((InmateMiddleName == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_InmateName));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(InmateMiddleName));
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_ID));
-            if ((Original_DateOfBirth.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_DateOfBirth.Value));
+            if ((Alias == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Alias));
+            }
+            if ((EmergencyContactInfo == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(EmergencyContactInfo));
+            }
+            if ((EmergencyContactRelation == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((Original_SocialSecurityNumber.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_SocialSecurityNumber.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(EmergencyContactRelation));
+            }
+            if ((LawyerContactInfo == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(LawyerContactInfo));
             }
-            if ((Original_Sentence == null)) {
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_ID));
+            if ((Original_DateOfBirth.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_DateOfBirth.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Sentence));
+            if ((Original_SocialSecurityNumber.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_SocialSecurityNumber.Value));
             }
-            if ((Original_Lawyer == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Lawyer));
-            }
-            if ((Original_CurrentJob == null)) {
+            if ((Original_Sentence == null)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_CurrentJob));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Sentence));
             }
-            if ((Original_InmateCell == null)) {
+            if ((Original_Lawyer == null)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_InmateCell));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Lawyer));
             }
-            if ((Original_Medications == null)) {
+            if ((Original_CurrentJob == null)) {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Medications));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_CurrentJob));
             }
-            if ((Original_Allergies == null)) {
+            if ((Original_InmateCell == null)) {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Allergies));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_InmateCell));
             }
-            if ((Original_Physician == null)) {
+            if ((Original_Medications == null)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Physician));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Medications));
             }
-            if ((Original_EmergencyContact == null)) {
+            if ((Original_Allergies == null)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_EmergencyContact));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_Allergies));
+            }
+            if ((Original_Physician == null)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_Physician));
+            }
+            if ((Original_EmergencyContact == null)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_EmergencyContact));
+            }
+            if ((Original_InmateFirstName == null)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_InmateFirstName));
+            }
+            if ((Original_InmateLastName == null)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_InmateLastName));
+            }
+            if ((Original_InmateMiddleName == null)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_InmateMiddleName));
+            }
+            if ((Original_Alias == null)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_Alias));
+            }
+            if ((Original_EmergencyContactInfo == null)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_EmergencyContactInfo));
+            }
+            if ((Original_EmergencyContactRelation == null)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_EmergencyContactRelation));
+            }
+            if ((Original_LawyerContactInfo == null)) {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_LawyerContactInfo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3844,7 +4469,6 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string InmateName, 
                     global::System.Nullable<global::System.DateTime> DateOfBirth, 
                     global::System.Nullable<int> SocialSecurityNumber, 
                     string Sentence, 
@@ -3856,7 +4480,13 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
                     string Medical_History, 
                     string Physician, 
                     string EmergencyContact, 
-                    string Original_InmateName, 
+                    string InmateFirstName, 
+                    string InmateLastName, 
+                    string InmateMiddleName, 
+                    string Alias, 
+                    string EmergencyContactInfo, 
+                    string EmergencyContactRelation, 
+                    string LawyerContactInfo, 
                     int Original_ID, 
                     global::System.Nullable<global::System.DateTime> Original_DateOfBirth, 
                     global::System.Nullable<int> Original_SocialSecurityNumber, 
@@ -3867,8 +4497,15 @@ namespace Cerberus.CerberusDatabaseDataSetTableAdapters {
                     string Original_Medications, 
                     string Original_Allergies, 
                     string Original_Physician, 
-                    string Original_EmergencyContact) {
-            return this.Update(InmateName, Original_ID, DateOfBirth, SocialSecurityNumber, Sentence, Lawyer, CurrentJob, InmateCell, Medications, Allergies, Medical_History, Physician, EmergencyContact, Original_InmateName, Original_ID, Original_DateOfBirth, Original_SocialSecurityNumber, Original_Sentence, Original_Lawyer, Original_CurrentJob, Original_InmateCell, Original_Medications, Original_Allergies, Original_Physician, Original_EmergencyContact);
+                    string Original_EmergencyContact, 
+                    string Original_InmateFirstName, 
+                    string Original_InmateLastName, 
+                    string Original_InmateMiddleName, 
+                    string Original_Alias, 
+                    string Original_EmergencyContactInfo, 
+                    string Original_EmergencyContactRelation, 
+                    string Original_LawyerContactInfo) {
+            return this.Update(Original_ID, DateOfBirth, SocialSecurityNumber, Sentence, Lawyer, CurrentJob, InmateCell, Medications, Allergies, Medical_History, Physician, EmergencyContact, InmateFirstName, InmateLastName, InmateMiddleName, Alias, EmergencyContactInfo, EmergencyContactRelation, LawyerContactInfo, Original_ID, Original_DateOfBirth, Original_SocialSecurityNumber, Original_Sentence, Original_Lawyer, Original_CurrentJob, Original_InmateCell, Original_Medications, Original_Allergies, Original_Physician, Original_EmergencyContact, Original_InmateFirstName, Original_InmateLastName, Original_InmateMiddleName, Original_Alias, Original_EmergencyContactInfo, Original_EmergencyContactRelation, Original_LawyerContactInfo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

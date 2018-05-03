@@ -45,6 +45,8 @@ namespace Cerberus
             //grid.DataContext = CerberusDataSet.Inmates.DefaultView;
             //inmateViewSource = (CollectionViewSource)(FindResource("inmatesViewSource"));
             txtFirstName.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtMiddleName.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtLastName.DataContext = CerberusDataSet.Inmates.DefaultView;
             txtID.DataContext = CerberusDataSet.Inmates.DefaultView;
             txtDateOfBirth.DataContext = CerberusDataSet.Inmates.DefaultView;
             txtSSN.DataContext = CerberusDataSet.Inmates.DefaultView;
@@ -53,6 +55,10 @@ namespace Cerberus
             txtEmergencyContactName.DataContext = CerberusDataSet.Inmates.DefaultView;
             txtCellAssignment.DataContext = CerberusDataSet.Inmates.DefaultView;
             txtJobAssignment.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtAliases.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtEmergencyContactInfo.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtEmergencyContactRelation.DataContext = CerberusDataSet.Inmates.DefaultView;
+            txtLawyerContactInfo.DataContext = CerberusDataSet.Inmates.DefaultView;
         }
 
         private void ReturntoSearch_Click(object sender, RoutedEventArgs e)

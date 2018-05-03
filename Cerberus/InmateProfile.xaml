@@ -31,15 +31,15 @@
         <!--Name-->
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" DataContext="{StaticResource inmatesViewSource}">
             <Label Name="lblFirstName" TabIndex="1" Content="First Name:" Target="{Binding ElementName=txtFirstName}" />
-            <TextBox Name="txtFirstName" TabIndex="2" TextWrapping="Wrap" Text="{Binding InmateName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+            <TextBox Name="txtFirstName" TabIndex="2" TextWrapping="Wrap" Text="{Binding InmateFirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
-        <StackPanel Margin="5" Grid.Row="0" Grid.Column="1">
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="1" DataContext="{StaticResource inmatesViewSource}">
             <Label Name="lblMiddleName" TabIndex="3" Content="Middle Name:" Target="{Binding ElementName=txtMiddleName}" />
-            <TextBox Name="txtMiddleName" TabIndex="4" TextWrapping="Wrap" Text="Inmate.MiddleName"/>
+            <TextBox Name="txtMiddleName" TabIndex="4" TextWrapping="Wrap" Text="{Binding InmateMiddleName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
-        <StackPanel Margin="5" Grid.Row="0" Grid.Column="2">
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="2" DataContext="{StaticResource inmatesViewSource}">
             <Label Name="lblLastName" TabIndex="5" Content="Last Name:" Target="{Binding ElementName=txtLastName}"/>
-            <TextBox Name="txtLastName" TabIndex="6" TextWrapping="Wrap" Text="Inmate.LastName"/>
+            <TextBox Name="txtLastName" TabIndex="6" TextWrapping="Wrap" Text="{Binding InmateLastName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
 
         <!--ID Number-->
@@ -49,9 +49,9 @@
         </StackPanel>
 
         <!--Aliases-->
-        <StackPanel Margin="5" Grid.Row="1" Grid.Column="1">
+        <StackPanel Margin="5" Grid.Row="1" Grid.Column="1" DataContext="{StaticResource inmatesViewSource}">
             <Label Name="lblAliasesName" TabIndex="9" Content="Aliases:" Target="{Binding ElementName=txtAliases}"/>
-            <TextBox Name="txtAliases" TabIndex="10" TextWrapping="Wrap" Text="Inmate.Aliases"/>
+            <TextBox Name="txtAliases" TabIndex="10" TextWrapping="Wrap" Text="{Binding Alias, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
 
         <!--Date Of Birth-->
@@ -77,9 +77,9 @@
             <Label Name="lblLawyerName" TabIndex="17" Content="Lawyer Name:" Target="{Binding ElementName=txtLawyerName}"/>
             <TextBox Name="txtLawyerName" TabIndex="18" TextWrapping="Wrap" Text="{Binding Lawyer, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
-        <StackPanel Margin="5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+        <StackPanel Margin="5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{StaticResource inmatesViewSource}">
             <Label Name="lblLawyerContactInfo" TabIndex="19" Content="Lawyer Contact Information:" Target="{Binding ElementName=txtLawyerContactInfo}"/>
-            <TextBox Name="txtLawyerContactInfo" TabIndex="20" TextWrapping="Wrap" Text="Inmate.LawyerContactInfo"/>
+            <TextBox Name="txtLawyerContactInfo" TabIndex="20" TextWrapping="Wrap" Text="{Binding LawyerContactInfo, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
 
         <!--Emergency Contact-->
@@ -87,13 +87,13 @@
             <Label Name="lblEmergencyContactName" TabIndex="21" Content="Emergency ContactName:" Target="{Binding ElementName=txtEmergencyContactName}"/>
             <TextBox Name="txtEmergencyContactName" TabIndex="22" TextWrapping="Wrap" Text="{Binding EmergencyContact, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
-        <StackPanel Margin="5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1">
+        <StackPanel Margin="5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" DataContext="{StaticResource inmatesViewSource}">
             <Label Name="lblEmergencyContactInfo" TabIndex="23" Content="Emergency Contact Information:" Target="{Binding ElementName=txtEmergencyContactInfo}"/>
-            <TextBox Name="txtEmergencyContactInfo" TabIndex="24" TextWrapping="Wrap" Text="Inmate.EmergencyContactInfo"/>
+            <TextBox Name="txtEmergencyContactInfo" TabIndex="24" TextWrapping="Wrap" Text="{Binding EmergencyContactInfo, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
-        <StackPanel Margin="5" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1">
+        <StackPanel Margin="5" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1" DataContext="{StaticResource inmatesViewSource}">
             <Label Name="lblEmergencyContactRelation" TabIndex="25" Content="Emergency Contact Relation:" Target="{Binding ElementName=txtEmergencyContactRelation}"/>
-            <TextBox Name="txtEmergencyContactRelation" TabIndex="26" TextWrapping="Wrap" Text="Inmate.EmergencyContactRelation"/>
+            <TextBox Name="txtEmergencyContactRelation" TabIndex="26" TextWrapping="Wrap" Text="{Binding EmergencyContactRelation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
 
         <!--Cell Assignment-->
