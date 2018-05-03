@@ -54,6 +54,8 @@ namespace Cerberus
             {
                 lblInstructions.Foreground = normal;
                 lblInstructions.Content = "Enter credentials to continue.";
+                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow.setLogin();
                 NavigationService.Navigate(new Home());
             }
         }

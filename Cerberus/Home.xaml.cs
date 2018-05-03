@@ -23,6 +23,7 @@ namespace Cerberus
         public Home()
         {
             InitializeComponent();
+            
         }
     }
 }

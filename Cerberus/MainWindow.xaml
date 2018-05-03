@@ -8,7 +8,7 @@
         Title="Home" Height="500" Width="800" MinWidth="800" MinHeight="500" ResizeMode="CanResizeWithGrip">
     <!--Navigation Menu-->
     <DockPanel>
-        <Canvas DockPanel.Dock="Left" Width="185" Margin="0,0,0,-0.333">
+        <Canvas Name="NavBar" DockPanel.Dock="Left" Width="185" Margin="0,0,0,-0.333">
             <Label DockPanel.Dock="Left" Canvas.Top="0" Canvas.Left="0" FontSize="20" Height="40">
                 Navigation
             </Label>
@@ -26,7 +26,7 @@
             </Label>
 
             <Button HorizontalContentAlignment="Left" Content="Employee Profiles" Canvas.Left="45" Canvas.Top="165" Width="135" Background="Transparent" BorderThickness="0"/>
-            <Button HorizontalContentAlignment="Left" Content="Clock In/Out" Canvas.Left="45" Canvas.Top="180" Width="135" Background="Transparent" BorderThickness="0"/>
+            <Button HorizontalContentAlignment="Left" Content="Clock In/Out" Canvas.Left="45" Canvas.Top="180" Width="135" Background="Transparent" BorderThickness="0" Click="Button_Click_4"/>
         </Canvas>
 
         <Frame x:Name="Main"/>

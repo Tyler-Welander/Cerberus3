@@ -20,11 +20,19 @@ namespace Cerberus
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Boolean loggedin = false;
+        public Login login = new Login();
+
         public MainWindow()
         {
             InitializeComponent();
-            Main.NavigationService.Navigate(new Login());
+            Main.Content = login;
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
+        }
+
+        public void setLogin()
+        {
+            loggedin = true;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -35,24 +43,44 @@ namespace Cerberus
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Inmate Profiles
-             Main.Content = new SearchInmate();
+            if (loggedin == true)
+            {
+                Main.Content = new SearchInmate();
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //Medical Report
-            Main.Content = new SearchMedicalReports();
+            if (loggedin == true)
+            {
+                //Medical Report
+                Main.Content = new SearchMedicalReports();
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //Schedule
-            Main.Content = new ScheduleSearch();
+            if (loggedin == true)
+            {
+                //Schedule
+                Main.Content = new ScheduleSearch();
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Main.Content = new SearchBehaviorReports();
+            if (loggedin == true)
+            {
+                Main.Content = new SearchBehaviorReports();
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (loggedin == true)
+            {
+                Main.Content = new EmployeeClockInOut();
+            }
         }
     }
 }
