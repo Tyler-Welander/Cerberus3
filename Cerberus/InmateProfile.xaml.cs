@@ -69,8 +69,7 @@ namespace Cerberus
         private void UpdateInmateProfile_Click(object sender, RoutedEventArgs e)
         {
             //Save fields in database
-            inmatesTableAdapter.UpdateInfo(txtFirstName.Text,
-                                           Int32.Parse(txtID.Text),
+            inmatesTableAdapter.UpdateInfo(//Int32.Parse(txtID.Text),
                                            DateTime.Parse(txtDateOfBirth.Text),
                                            Int32.Parse(txtSSN.Text),
                                            txtSentence.Text,
@@ -78,8 +77,15 @@ namespace Cerberus
                                            txtJobAssignment.Text,
                                            txtCellAssignment.Text,
                                            txtEmergencyContactName.Text,
+                                           txtFirstName.Text,
+                                           txtMiddleName.Text,
+                                           txtLastName.Text,
+                                           txtAliases.Text,
+                                           txtLawyerContactInfo.Text,
+                                           txtEmergencyContactInfo.Text,
+                                           txtEmergencyContactRelation.Text,
                                            ID);
-            inmatesTableAdapter.Update(CerberusDataSet);
+            //inmatesTableAdapter.Update(CerberusDataSet);
         }
     }
 }

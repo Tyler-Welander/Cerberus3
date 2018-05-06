@@ -39,23 +39,23 @@
         <!--Emergency Contact-->
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1">
             <Label Name="lblEmergencyContactName" TabIndex="21" Content="Emergency ContactName:" Target="{Binding ElementName=txtEmergencyContactName}"/>
-            <TextBox Name="txtEmergencyContactName" TabIndex="22" TextWrapping="Wrap" Text="Inmate.EmergencyContactName"/>
+            <TextBox Name="txtEmergencyContactName" TabIndex="22" TextWrapping="Wrap" Text="Employee.EmergencyContactName"/>
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
             <Label Name="lblEmergencyContactInfo" TabIndex="23" Content="Emergency Contact Information:" Target="{Binding ElementName=txtEmergencyContactInfo}"/>
-            <TextBox Name="txtEmergencyContactInfo" TabIndex="24" TextWrapping="Wrap" Text="Inmate.EmergencyContactInfo"/>
+            <TextBox Name="txtEmergencyContactInfo" TabIndex="24" TextWrapping="Wrap" Text="Employee.EmergencyContactInfo"/>
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1">
             <Label Name="lblEmergencyContactRelation" TabIndex="25" Content="Emergency Contact Relation:" Target="{Binding ElementName=txtEmergencyContactRelation}"/>
-            <TextBox Name="txtEmergencyContactRelation" TabIndex="26" TextWrapping="Wrap" Text="Inmate.EmergencyContactRelation"/>
+            <TextBox Name="txtEmergencyContactRelation" TabIndex="26" TextWrapping="Wrap" Text="Employee.EmergencyContactRelation"/>
         </StackPanel>
 
         <CheckBox Name="chbBackgroundCheck" Margin="5" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1"
                   Content="Passed Background Check" VerticalAlignment="Center"/>
 
         <DockPanel Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
-            <Label Name="lblHealthInfo" TabIndex="25" Content="Emergency Contact Relation:" Target="{Binding ElementName=txtEmergencyContactRelation}"/>
-            <TextBox Name="txtHealthInfo" TabIndex="26" TextWrapping="Wrap" Text="Inmate.EmergencyContactRelation"/>
+            <Label Name="lblHealthInfo" TabIndex="25" Content="Health Information:" Target="{Binding ElementName=txtHealthInfo}"/>
+            <TextBox Name="txtHealthInfo" TabIndex="26" TextWrapping="Wrap" Text="Employee.HealthInfo"/>
         </DockPanel>
 
         <Button Name="btnReturnToSearch" Content="Return To Search" Margin="5" MaxHeight="30" MaxWidth="200"

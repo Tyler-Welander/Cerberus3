@@ -27,18 +27,18 @@
         <!--Name-->
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0">
             <Label Name="lblNameLabel" TabIndex="1" Content="Name:" />
-            <Label Name="lblName" TabIndex="2" Content="Inmate.Name"/>
+            <Label Name="lblName" TabIndex="2" Content="Employee.Name"/>
         </StackPanel>
 
         <!--ID Number-->
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="1">
             <Label Name="lblID" TabIndex="7" Content="ID Number:" Target="{Binding ElementName=txtID}"/>
-            <Label Name="lblIDNumber" TabIndex="8" Content="Inmate.ID"/>
+            <Label Name="lblIDNumber" TabIndex="8" Content="Employee.ID"/>
         </StackPanel>
 
         <!--Inmate Timesheet-->
         <StackPanel Margin="5" Grid.Row="2" Grid.Column="0">
-            <Label Name="lblTimesheet" TabIndex="15" Content="Inmate Timesheet:" Target="{Binding ElementName=txtSchedule}"/>
+            <Label Name="lblTimesheet" TabIndex="15" Content="Employee Timesheet:" Target="{Binding ElementName=txtSchedule}"/>
         </StackPanel>
         <TextBox Name="txtTimesheet" Margin="5" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
 
