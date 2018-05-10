@@ -35,11 +35,11 @@ namespace Cerberus
             CerberusDataSet = new CerberusDatabaseDataSet();
 
             // Parsing id from a string to integer
-            this.ID = int.Parse(ID);
+            this.ID = Int32.Parse(ID);
 
             // Use a table adapter to populate the Inmates table
             inmatesTableAdapter = new InmatesTableAdapter();
-            inmatesTableAdapter.PrisonerInfo(CerberusDataSet.Inmates, Int32.Parse(ID));
+            inmatesTableAdapter.PrisonerInfo(CerberusDataSet.Inmates, this.ID);
 
             // Use the Inmates talbe as the DataContext for this window
             //grid.DataContext = CerberusDataSet.Inmates.DefaultView;
@@ -85,7 +85,7 @@ namespace Cerberus
                                            txtEmergencyContactInfo.Text,
                                            txtEmergencyContactRelation.Text,
                                            ID);
-            //inmatesTableAdapter.Update(CerberusDataSet);
+            inmatesTableAdapter.Update(CerberusDataSet);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cerberus.CerberusDatabaseDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,31 @@ namespace Cerberus
     /// </summary>
     public partial class EmployeeProfile : Page
     {
-        public EmployeeProfile(String fname)
+        private CerberusDatabaseDataSet CerberusDataSet;
+        private EmployeesTableAdapter employeesTableAdapter;
+        private Int32 ID;
+
+        public EmployeeProfile(String ID)
         {
             InitializeComponent();
-            txtName.Text = fname;
+
+            // Construct the dataset
+            CerberusDataSet = new CerberusDatabaseDataSet();
+
+            // Parsing id from a string to integer
+            this.ID = Int32.Parse(ID);
+
+            // Use a table adapter to populate the Inmates table
+            employeesTableAdapter = new EmployeesTableAdapter();
+            employeesTableAdapter.EmployeeInfo(CerberusDataSet.Employees, this.ID);
+
+            txtName.DataContext = CerberusDataSet.Employees.DefaultView;
+            txtIDNumber.DataContext = CerberusDataSet.Employees.DefaultView;
+            txtHealthInfo.DataContext = CerberusDataSet.Employees.DefaultView;
+            txtEmergencyContactInfo.DataContext = CerberusDataSet.Employees.DefaultView;
+            txtEmergencyContactName.DataContext = CerberusDataSet.Employees.DefaultView;
+            txtEmergencyContactRelation.DataContext = CerberusDataSet.Employees.DefaultView;
+            chbBackgroundCheck.DataContext = CerberusDataSet.Employees.DefaultView;
         }
 
         private void UpdateEmployeeProfile_Click(object sender, RoutedEventArgs e)

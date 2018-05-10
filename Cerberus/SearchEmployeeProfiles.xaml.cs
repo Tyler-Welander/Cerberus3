@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cerberus.CerberusDatabaseDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,22 @@ namespace Cerberus
     /// </summary>
     public partial class SearchEmployeeProfiles : Page
     {
-        private List<Employee> items = new List<Employee>();
+        private CerberusDatabaseDataSet CerberusDataSet;
+        private EmployeesTableAdapter employeesTableAdapter;
 
         public SearchEmployeeProfiles()
         {
             InitializeComponent();
-            //List<TodoItem> items = new List<TodoItem>();
-            items.Add(new Employee() { Name = "Jay Peterson", ID = "00000001", Profile = new EmployeeProfile("Jay") });
-            items.Add(new Employee() { Name = "Tyler Welander", ID = "00000002", Profile = new EmployeeProfile("Tyler") });
-            items.Add(new Employee() { Name = "Michelle Keller", ID = "00000003", Profile = new EmployeeProfile("Michelle") });
+
+            // Construct the dataset
+            CerberusDataSet = new CerberusDatabaseDataSet();
+
+            // Use a table adapter to populate the Inmates table
+            employeesTableAdapter = new EmployeesTableAdapter();
+            employeesTableAdapter.Fill(CerberusDataSet.Employees);
+
+            // Use the Inmates talbe as the DataContext for this window
+            grid.DataContext = CerberusDataSet.Employees.DefaultView;
         }
 
         public class Employee
@@ -59,17 +67,18 @@ namespace Cerberus
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             //loads list into listbox
-            SearchResults.ItemsSource = items;
+            //SearchResults.ItemsSource = items;
         }
 
         public void ViewItem_Click(object sender, RoutedEventArgs e)
         {
-            if (SearchResults.SelectedItem != null)
+            if (((TextBlock)sender).Tag.ToString() != null)
             {
-                Employee selected = (Employee)SearchResults.SelectedItem;
+                //Inmate selected = (Inmate)SearchResults.SelectedItem;
+                EmployeeProfile profile = new EmployeeProfile(((TextBlock)sender).Tag.ToString());
 
                 //txtSearch.Text = SearchResults.SelectedItem.ToString();
-                NavigationService.Navigate(selected.Profile);
+                NavigationService.Navigate(profile);
             }
         }
 

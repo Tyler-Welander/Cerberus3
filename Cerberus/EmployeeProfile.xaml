@@ -7,8 +7,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EmployeeProfile">
+    <Page.Resources>
+        <local:CerberusDatabaseDataSet x:Key="cerberusDatabaseDataSet"/>
+        <CollectionViewSource x:Key="employeesViewSource" Source="{Binding Employees, Source={StaticResource cerberusDatabaseDataSet}}"/>
+    </Page.Resources>
 
-    <Grid>
+    <Grid DataContext="{StaticResource employeesViewSource}">
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
             <RowDefinition MinHeight="50" Height="50*" MaxHeight="100"/>
@@ -25,37 +29,37 @@
         </Grid.ColumnDefinitions>
 
         <!--Name-->
-        <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{StaticResource employeesViewSource}">
             <Label Name="lblName" TabIndex="1" Content="Name:" />
-            <TextBox Name="txtName" TabIndex="2" Text="Employee.Name"/>
+            <TextBox Name="txtName" TabIndex="2" Text="{Binding EmployeeName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
 
         <!--ID Number-->
-        <StackPanel Margin="5" Grid.Row="0" Grid.Column="2">
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="2" DataContext="{StaticResource employeesViewSource}">
             <Label Name="lblID" TabIndex="7" Content="ID Number:" Target="{Binding ElementName=txtID}"/>
-            <TextBox Name="txtIDNumber" TabIndex="8" Text="Employee.ID"/>
+            <TextBox Name="txtIDNumber" TabIndex="8" Text="{Binding EmployeeNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
 
         <!--Emergency Contact-->
-        <StackPanel Margin="5" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1">
+        <StackPanel Margin="5" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" DataContext="{StaticResource employeesViewSource}">
             <Label Name="lblEmergencyContactName" TabIndex="21" Content="Emergency ContactName:" Target="{Binding ElementName=txtEmergencyContactName}"/>
-            <TextBox Name="txtEmergencyContactName" TabIndex="22" TextWrapping="Wrap" Text="Employee.EmergencyContactName"/>
+            <TextBox Name="txtEmergencyContactName" TabIndex="22" TextWrapping="Wrap" Text="{Binding EmergencyContactName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
             <Label Name="lblEmergencyContactInfo" TabIndex="23" Content="Emergency Contact Information:" Target="{Binding ElementName=txtEmergencyContactInfo}"/>
-            <TextBox Name="txtEmergencyContactInfo" TabIndex="24" TextWrapping="Wrap" Text="Employee.EmergencyContactInfo"/>
+            <TextBox Name="txtEmergencyContactInfo" TabIndex="24" TextWrapping="Wrap" Text="{Binding EmergencyContactInfo, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1">
             <Label Name="lblEmergencyContactRelation" TabIndex="25" Content="Emergency Contact Relation:" Target="{Binding ElementName=txtEmergencyContactRelation}"/>
-            <TextBox Name="txtEmergencyContactRelation" TabIndex="26" TextWrapping="Wrap" Text="Employee.EmergencyContactRelation"/>
+            <TextBox Name="txtEmergencyContactRelation" TabIndex="26" TextWrapping="Wrap" Text="{Binding EmergencyContactRelation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         </StackPanel>
 
         <CheckBox Name="chbBackgroundCheck" Margin="5" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1"
-                  Content="Passed Background Check" VerticalAlignment="Center"/>
+                  Content="Passed Background Check" VerticalAlignment="Center" IsChecked="{Binding BackgroundCheck, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
 
         <DockPanel Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
             <Label Name="lblHealthInfo" TabIndex="25" Content="Health Information:" Target="{Binding ElementName=txtHealthInfo}"/>
-            <TextBox Name="txtHealthInfo" TabIndex="26" TextWrapping="Wrap" Text="Employee.HealthInfo"/>
+            <TextBox Name="txtHealthInfo" TabIndex="26" TextWrapping="Wrap" />
         </DockPanel>
 
         <Button Name="btnReturnToSearch" Content="Return To Search" Margin="5" MaxHeight="30" MaxWidth="200"

@@ -7,6 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SearchEmployeeProfiles">
+    <Page.Resources>
+        <local:CerberusDatabaseDataSet x:Key="cerberusDatabaseDataSet"/>
+        <CollectionViewSource x:Key="employeesViewSource" Source="{Binding Employees, Source={StaticResource cerberusDatabaseDataSet}}"/>
+    </Page.Resources>
 
     <Grid>
         <!--Search Bar-->
@@ -21,9 +25,22 @@
         <!--Buttons-->
         <Button Content="Search" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="10, 10" Height="27" Click="SearchButton_Click"/>
 
-        <ListBox Name="SearchResults" Margin="10,47,9.667,56" SelectionChanged="SearchResults_SelectionChanged">
+        <!--ListBox Name="SearchResults" Margin="10,47,9.667,56" SelectionChanged="SearchResults_SelectionChanged">
 
-        </ListBox>
+        </-->
+        <DataGrid x:Name="grid" DataContext="{StaticResource employeesViewSource}" Margin="10,47,9.667,56" ItemsSource="{Binding}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridHyperlinkColumn Header="Employee Number" Binding="{Binding EmployeeNumber}">
+                    <DataGridHyperlinkColumn.ElementStyle>
+                        <Style TargetType="TextBlock" >
+                            <EventSetter Event="Hyperlink.Click" Handler="ViewItem_Click" />
+                            <Setter Property="Tag" Value="{Binding EmployeeNumber}" />
+                        </Style>
+                    </DataGridHyperlinkColumn.ElementStyle>
+                </DataGridHyperlinkColumn>
+                <DataGridTextColumn Binding="{Binding EmployeeName}" Header="Employee's Name" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button Name="ViewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="View Employee Profile" Margin="0,0,12,10" Width="133" Height="28" Click="ViewItem_Click"/>
     </Grid>
 </Page>
